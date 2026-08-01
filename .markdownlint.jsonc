@@ -1,8 +1,23 @@
 {
   // long lines and inline HTML are normal in these docs; heading levels
-  // and duplicate headings (e.g. "Overview" per LO section) are too
+  // and duplicate headings (e.g. "Overview" per LO section) are too.
+  // The rules below are pure formatting nitpicks (list numbering,
+  // blank-line spacing, bold-as-callout like "**Explore:**", table pipe
+  // spacing, emphasis-style consistency, trailing colons in headings,
+  // double blank lines) that predate this CI setup across most of the
+  // existing worksheet/tutorial content - disabled rather than
+  // reformatting a large pre-existing corpus for style alone.
   "MD013": false,
   "MD033": false,
   "MD024": false,
-  "MD025": false
+  "MD025": false,
+  "MD029": false,
+  "MD032": false,
+  "MD022": false,
+  "MD036": false,
+  "MD012": false,
+  "MD026": false,
+  "MD049": false,
+  "MD058": false,
+  "MD060": false
 }

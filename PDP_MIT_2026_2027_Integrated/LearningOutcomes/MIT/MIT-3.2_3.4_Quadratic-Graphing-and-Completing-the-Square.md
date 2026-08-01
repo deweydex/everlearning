@@ -213,8 +213,7 @@ Where:
 - $(h, k)$ is the **vertex**
 - $a$ determines **direction** (up/down) and **width**
 
-**🔗 Explore:** [Vertex Form Explorer](https://www.geogebra.org/m/BUD9HAPR)
-*Use sliders to change $a$, $h$, and $k$ and watch the parabola move!*
+**🔗 Explore:** try this in the [GeoGebra graphing calculator](https://www.geogebra.org/calculator) — plot $y = a(x - h)^2 + k$ and add sliders for $a$, $h$, and $k$ to watch the parabola move.
 
 ---
 
@@ -358,7 +357,7 @@ The **discriminant** $b^2 - 4ac$ tells us how many roots to expect:
 | $b^2 - 4ac = 0$ | One repeated root | Touches x-axis once (vertex on x-axis) |
 | $b^2 - 4ac < 0$ | No real roots | Never crosses x-axis |
 
-**🔗 Explore:** [Discriminant Visualizer](https://www.geogebra.org/m/mchqmhst)
+**🔗 Explore:** try this in the [GeoGebra graphing calculator](https://www.geogebra.org/calculator) — plot a quadratic and a slider for one coefficient, and watch how the graph's relationship to the x-axis changes as the discriminant crosses zero.
 
 ---
 
