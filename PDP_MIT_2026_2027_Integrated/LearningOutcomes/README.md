@@ -21,6 +21,8 @@ Files prefixed `SUGGESTION_` are **not filled-in content** — they're a gap des
 
 **Newly built, not a copy of anything** (`PDP/PDP-LO1_LO3_MIT-1.4_The-Computing-Time-Machine.ipynb`) — a from-scratch notebook combining PDP LO1 (history of programming) and LO3 (differentiating languages/paradigms) with a fun "time-travelling codebreaker" framing that reuses and reinforces the MIT 1.4 binary/hex skills students already have from `Tutorial_02` and the NB1 skills demos, rather than teaching binary a second time in isolation. This is the "combine history-of-computing and binary into one new tutorial" piece specifically requested for this pass.
 
+**Pulled in from a 2026-08-01 upload** (`MIT/MIT-6.8_Recursion-Fibonacci-and-Big-O.ipynb`) — closes the "recursion required in the Fun track but only optional in the Boring track" inconsistency flagged in `SUGGESTION_MIT-Verify-Minor-Gaps.md`, by giving recursion its own dedicated required treatment (naive vs. memoized vs. iterative Fibonacci, with the O(2ⁿ)-vs-O(n) difference made concrete) that either track can assign. See [`../../planning/2026-08-01-upload-manifest.md`](../../planning/2026-08-01-upload-manifest.md) for the full breakdown of that upload, including the practice-focused skills demos and problem bank it also produced (in `SkillsDemos/PracticePDPandMIT-SkillsDemos/` and `PracticeProblems/`, siblings of this folder) and the beyond-syllabus/off-topic material that went to `Enrichment/` and `OtherCourses/` instead.
+
 **Still genuine gaps, `SUGGESTION_` files only** — no existing content anywhere to pull from, so these describe the plan rather than the finished material:
 
 | File | Gap |
