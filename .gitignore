@@ -131,3 +131,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Generated output from running exercises/solutions locally
+/plots/
