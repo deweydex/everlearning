@@ -1,7 +1,7 @@
 # SUGGESTION: The concept of a limit
 
 > **Learning outcome at stake:** MIT 5N18396, 3.5 — "Investigate the concept of the limit of a function and compute the limits of linear, quadratic and quotient functions and understand the idea of a continuous function."
-> **Status:** Confirmed gap, and explicitly named as one in `SkillsDemos/BoringPDPandMIT-SkillsDemos/NB4_Group_Portion_Ideas.md` ("limits (3.5)... not covered by the assignments"). `mathematics/markdown/worksheet_01b_fractions_wild.md` touches informal limiting behaviour of formulas (e.g. "what happens as n→∞") but doesn't build the formal limit concept the LO calls for, and it isn't specific to MIT's linear/quadratic/quotient-function scope.
+> **Status:** Confirmed gap, and explicitly named as one in `SkillsDemos/BoringPDPandMIT-SkillsDemos/NB4_Group_Portion_Ideas.md` ("limits (3.5)... not covered by the assignments"). An existing fractions worksheet touches informal limiting behaviour of formulas (e.g. "what happens as n→∞") but doesn't build the formal limit concept the LO calls for, and it isn't specific to MIT's linear/quadratic/quotient-function scope.
 
 ## Why this gap matters
 
@@ -18,7 +18,7 @@ Limits are unusually well suited to a **hybrid pen-and-paper + programming** app
 
 ## Suggested file structure
 
-A short new worksheet/notebook — either pen-and-paper (`LearningOutcomes/MIT/MIT-3.5_Limits.md`, in the style of the pulled-in `mathematics` worksheets) or a light notebook if the numerical-exploration approach above is preferred, since evaluating a function at a sequence of x-values is a natural fit for a few lines of Python and a `matplotlib` plot showing the "hole" in the graph being approached from both sides.
+A short new worksheet/notebook — either pen-and-paper (`LearningOutcomes/MIT/MIT-3.5_Limits.md`, in the style of the other worksheets in this folder) or a light notebook if the numerical-exploration approach above is preferred, since evaluating a function at a sequence of x-values is a natural fit for a few lines of Python and a `matplotlib` plot showing the "hole" in the graph being approached from both sides.
 
 ## Fun reinforcement idea
 

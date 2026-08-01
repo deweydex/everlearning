@@ -1,7 +1,7 @@
 # SUGGESTION: Functions, inverse functions & full graphing coverage (linear/cubic + solving via graph)
 
 > **Learning outcomes at stake:** MIT 5N18396 — 3.1 (a function assigns a single output to every input; inverse functions, computed in simple algebraic cases), 3.2 (graph linear, quadratic **and cubic** functions, and use the graphs to solve `f(x)=0`, `f(x)=k`, `f(x)=g(x)`).
-> **Status:** Partial gap. [`MIT-3.2_3.4_Quadratic-Graphing-and-Completing-the-Square.md`](./MIT-3.2_3.4_Quadratic-Graphing-and-Completing-the-Square.md) (pulled in from `mathematics`) covers quadratic graphing thoroughly, and `FunPDPandMIT-SkillsDemos/NB3_The_Algebra_Sketchpad.ipynb` has a `plot_polynomial` function that can plot linear and quadratic functions — but linear graphing is never a dedicated exercise, cubic graphing doesn't appear anywhere, inverse functions are never computed, and "solve `f(x)=g(x)` by finding where two graphs intersect" is only lightly touched (the Algebra Sketchpad plots polynomial intersections for root-finding, not general `f(x)=g(x)` problems).
+> **Status:** Partial gap. [`MIT-3.2_3.4_Quadratic-Graphing-and-Completing-the-Square.md`](./MIT-3.2_3.4_Quadratic-Graphing-and-Completing-the-Square.md) covers quadratic graphing thoroughly, and `FunPDPandMIT-SkillsDemos/NB3_The_Algebra_Sketchpad.ipynb` has a `plot_polynomial` function that can plot linear and quadratic functions — but linear graphing is never a dedicated exercise, cubic graphing doesn't appear anywhere, inverse functions are never computed, and "solve `f(x)=g(x)` by finding where two graphs intersect" is only lightly touched (the Algebra Sketchpad plots polynomial intersections for root-finding, not general `f(x)=g(x)` problems).
 
 ## Why this gap matters
 

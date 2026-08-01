@@ -1,7 +1,6 @@
 # MIT 3.6: Derivatives as Rates of Change (Power Rule, Antiderivatives)
 
 > **Learning outcome:** MIT 5N18396, Section 3 (Functions & Calculus) — 3.6 (understand how a derivative arises as a limit from looking for tangent lines or rates of change). This worksheet goes further than the LO strictly requires (it also introduces integration as the inverse operation), which is useful context but not itself examined.
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_04a_derivatives_integrals_inverse.md`
 > **Teaching method:** Pen-and-paper exercises (answer key included below)
 > **Pairs with:** [`MIT-3.6_What-Derivatives-and-Integrals-Tell-Us.md`](./MIT-3.6_What-Derivatives-and-Integrals-Tell-Us.md) (interpretation) and [`MIT-3.7_Product-Quotient-Chain-Rule.md`](./MIT-3.7_Product-Quotient-Chain-Rule.md) (the remaining differentiation rules)
 

@@ -1,7 +1,7 @@
 # SUGGESTION: Closing the MIT Section 2 "hard half" — Venn diagrams, truth tables, De Morgan's Laws
 
 > **Learning outcomes at stake:** MIT 5N18396 — 2.1 (partial: the complex number set ℂ, finite/infinite sets, cardinality), 2.2 (partial: Cartesian product, power set), 2.3 (Venn diagrams, 2 and 3 sets), 2.4 (truth tables for AND/NOT/OR/XOR), 2.5 (De Morgan's Laws).
-> **Status:** Confirmed absent from all four repos (`everlearning`, `mathematics`, `2plus1coding`, `python-with-ml`) — not a migration candidate, needs new content.
+> **Status:** Confirmed absent from the existing curriculum — not something to adapt from elsewhere, needs new content.
 > **What's already solid:** `Tutorials/BoringTutorials/Tutorial_16_Sets_as_Sorted_Lists.ipynb` and the Algebra Engine skills demos already cover set operations (union, intersection, difference, symmetric difference) really well, programmatically. This suggestion is specifically for the pieces that worksheet doesn't touch.
 
 ## Why this gap matters

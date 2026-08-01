@@ -1,7 +1,7 @@
 # SUGGESTION: Extending the quadratic formula to complex roots
 
 > **Learning outcome at stake:** MIT 5N18396, 1.10 — "Solve quadratic equations with real **and complex** roots by factorisation or formula."
-> **Status:** Confirmed gap. Every existing implementation — `Tutorials/BoringTutorials/Tutorial_15_Cracking_Equations.ipynb`, `SkillsDemos/BoringPDPandMIT-SkillsDemos/NB3_...The_Algebra_Engine.ipynb`, `SkillsDemos/FunPDPandMIT-SkillsDemos/NB3_The_Algebra_Sketchpad.ipynb`, and `mathematics/markdown/worksheet_03b_factoring_solving.md` — treats a negative discriminant as "no real roots" and stops there. `FunPDPandMIT-SkillsDemos/NB3` even says so explicitly in a code comment: *"complex roots exist but we will keep things real."*
+> **Status:** Confirmed gap. Every existing implementation — `Tutorials/BoringTutorials/Tutorial_15_Cracking_Equations.ipynb`, `SkillsDemos/BoringPDPandMIT-SkillsDemos/NB3_...The_Algebra_Engine.ipynb`, `SkillsDemos/FunPDPandMIT-SkillsDemos/NB3_The_Algebra_Sketchpad.ipynb` — treats a negative discriminant as "no real roots" and stops there. `FunPDPandMIT-SkillsDemos/NB3` even says so explicitly in a code comment: *"complex roots exist but we will keep things real."*
 
 ## Why this gap matters
 

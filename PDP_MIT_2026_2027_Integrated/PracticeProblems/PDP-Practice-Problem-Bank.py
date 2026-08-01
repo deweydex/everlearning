@@ -3,15 +3,13 @@ PDP Practice Problem Bank — Problems 1-38
 ===========================================================================
 Programming & Design Principles (5N2927) — general Python practice.
 
-Provenance: combined and renumbered from 8 separate files found in an
-uploaded `python.zip` (2026-08-01): practice-problems-1-2.py, -2.py, -3.py,
--4.py, -5.py, -6.py, -7.py, -other.py. Problems 23-38 already carried
-"Problem N" numbering in their source docstrings; problems 1-22 didn't, and
-are numbered here to make the whole bank one continuous sequence. A near-
-duplicate draft of problems 1-7 (practice-problems-1_3.py, containing messy
-in-progress student annotations rather than a distinct problem set) was
-found and intentionally excluded — see the upload manifest in
-`planning/2026-08-01-upload-manifest.md` for details.
+Provenance: combined and renumbered from several originally-separate problem
+sets that turned out to be one continuous, arbitrarily-split sequence.
+Problems 23-38 already carried "Problem N" numbering in their source
+docstrings; problems 1-22 didn't, and are numbered here to make the whole
+bank one continuous sequence. A near-duplicate draft of problems 1-7,
+containing messy in-progress student annotations rather than a distinct
+problem set, was found and intentionally excluded.
 
 All problems are blank TODO stubs (student-facing), not solutions.
 ===========================================================================

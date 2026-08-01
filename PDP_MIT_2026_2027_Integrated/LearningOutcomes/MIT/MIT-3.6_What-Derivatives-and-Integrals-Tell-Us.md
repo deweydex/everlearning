@@ -1,7 +1,6 @@
 # MIT 3.6: What Derivatives Tell Us (Slope, Rate of Change, Optimisation)
 
 > **Learning outcome:** MIT 5N18396, Section 3 (Functions & Calculus) — 3.6 (understand how a derivative arises as a limit from looking for tangent lines or rates of change), applied here to interpretation, concavity, and optimisation.
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_04b_what_they_tell_us.md`
 > **Teaching method:** Pen-and-paper exercises (answer key included below)
 > **Pairs with:** [`MIT-3.6_Derivatives-Integrals-and-Inverse-Operations.md`](./MIT-3.6_Derivatives-Integrals-and-Inverse-Operations.md) (the mechanics) and [`MIT-3.7_Product-Quotient-Chain-Rule.md`](./MIT-3.7_Product-Quotient-Chain-Rule.md)
 

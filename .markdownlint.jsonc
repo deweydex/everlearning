@@ -1,0 +1,8 @@
+{
+  // long lines and inline HTML are normal in these docs; heading levels
+  // and duplicate headings (e.g. "Overview" per LO section) are too
+  "MD013": false,
+  "MD033": false,
+  "MD024": false,
+  "MD025": false
+}

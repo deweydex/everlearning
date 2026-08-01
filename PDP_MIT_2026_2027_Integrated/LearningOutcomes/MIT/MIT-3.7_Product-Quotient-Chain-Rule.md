@@ -1,7 +1,6 @@
 # MIT 3.7: Product, Quotient & Chain Rule Differentiation
 
-> **Learning outcome:** MIT 5N18396, Section 3 (Functions & Calculus) — 3.7 (use the sum, product and quotient formulas for differentiation and the chain rule to differentiate simple functions that are a composition of several functions). This is the single most direct source-content match found anywhere in the four repos for an explicit MIT sub-outcome.
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_04c_advanced_rules.md`
+> **Learning outcome:** MIT 5N18396, Section 3 (Functions & Calculus) — 3.7 (use the sum, product and quotient formulas for differentiation and the chain rule to differentiate simple functions that are a composition of several functions).
 > **Teaching method:** Pen-and-paper exercises (answer key included below)
 > **Pairs with:** [`MIT-3.6_Derivatives-Integrals-and-Inverse-Operations.md`](./MIT-3.6_Derivatives-Integrals-and-Inverse-Operations.md) and [`MIT-3.6_What-Derivatives-and-Integrals-Tell-Us.md`](./MIT-3.6_What-Derivatives-and-Integrals-Tell-Us.md)
 

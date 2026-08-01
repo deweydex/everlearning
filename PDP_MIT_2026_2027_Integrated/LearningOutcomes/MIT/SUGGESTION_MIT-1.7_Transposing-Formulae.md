@@ -1,7 +1,7 @@
 # SUGGESTION: Transposing formulae & rational algebraic expressions
 
 > **Learning outcome at stake:** MIT 5N18396, 1.7 — "Transpose formulae and perform arithmetic operations on polynomials and rational algebraic expressions."
-> **Status:** Weak/partial gap. `mathematics/markdown/worksheet_01_fractions.md` and `worksheet_01a_fractions_fundamentals.md` cover algebraic fraction simplification and arithmetic well, but "transposing formulae" — rearranging an equation to isolate a different variable (e.g. rearranging `A = πr²` to solve for `r`) — isn't explicitly taught anywhere in `everlearning`, `mathematics`, or the programming repos.
+> **Status:** Weak/partial gap. The existing fractions worksheets cover algebraic fraction simplification and arithmetic well, but "transposing formulae" — rearranging an equation to isolate a different variable (e.g. rearranging `A = πr²` to solve for `r`) — isn't explicitly taught anywhere in this curriculum.
 
 ## Why this gap matters
 
@@ -19,7 +19,7 @@ A worksheet built around the existing geometry/physics formulas already in the c
 
 ## Suggested file structure
 
-A short worksheet, `LearningOutcomes/MIT/MIT-1.7_Transposing-Formulae.md`, once written — following the same pen-and-paper-with-answer-key format as the pulled-in `mathematics` worksheets in this folder.
+A short worksheet, `LearningOutcomes/MIT/MIT-1.7_Transposing-Formulae.md`, once written — following the same pen-and-paper-with-answer-key format as the other worksheets in this folder.
 
 ## Fun reinforcement idea
 
