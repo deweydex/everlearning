@@ -1,8 +1,8 @@
 # Other Courses
 
-This folder is **not** part of the QQI Level 5 MIT/PDP curriculum that lives under [`PDP_MIT_2026_2027_Integrated/`](../PDP_MIT_2026_2027_Integrated/). It exists so that material uploaded alongside PDP/MIT files (from a 2026-08-01 batch of skills-demo drafts and a `python.zip`) doesn't get lost or, worse, accidentally mixed into the QQI course content it was found next to.
+This folder is **not** part of the QQI Level 5 MIT/PDP curriculum that lives under [`PDP_MIT_2026_2027_Integrated/`](../PDP_MIT_2026_2027_Integrated/). It exists so that material found alongside PDP/MIT files doesn't get lost or, worse, accidentally mixed into the QQI course content it was found next to.
 
-Everything here belongs to other courses/levels this repo's owner teaches. See [`../planning/2026-08-01-upload-manifest.md`](../planning/2026-08-01-upload-manifest.md) for the full breakdown of where every file from that upload ended up and why.
+Everything here belongs to other courses/levels this repo's owner teaches.
 
 ## What's here
 

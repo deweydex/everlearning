@@ -1,7 +1,6 @@
 # MIT 4.4 & 4.9: The Pythagorean Theorem & Practical Right-Triangle Trig
 
 > **Learning outcomes:** MIT 5N18396, Section 4 (Geometry & Trigonometry) — 4.4 (apply the Pythagorean theorem) and 4.9 (solve practical problems using trigonometric formulae and terminology, including sine, cosine and tangent ratios for right-angled triangles — SOH-CAH-TOA).
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_05b_right_triangle_trig.md`
 > **Teaching method:** Pen-and-paper exercises, with real-world applications (astronomy, engineering, surveying, optics)
 > **Pairs with:** [`MIT-4.5-4.7_Radians-and-the-Unit-Circle.md`](./MIT-4.5-4.7_Radians-and-the-Unit-Circle.md) and [`MIT-4.8_4.10_Triangle-Area-Sine-and-Cosine-Rules.md`](./MIT-4.8_4.10_Triangle-Area-Sine-and-Cosine-Rules.md)
 

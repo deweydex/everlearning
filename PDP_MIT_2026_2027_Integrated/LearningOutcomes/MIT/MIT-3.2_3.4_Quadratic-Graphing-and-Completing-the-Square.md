@@ -1,7 +1,6 @@
 # MIT 3.2 & 3.4: Graphing Quadratics & Completing the Square
 
 > **Learning outcomes:** MIT 5N18396, Section 3 (Functions & Calculus) — 3.4 (complete the square for a quadratic function to determine roots and vertex — full coverage) and partial coverage of 3.2 (graph quadratic functions and use graphs to solve `f(x)=0`, `f(x)=k`, `f(x)=g(x)`; this worksheet covers the quadratic case only, not linear/cubic).
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_03d_graphing.md`
 > **Teaching method:** Pen-and-paper exercises, with optional interactive GeoGebra exploration (external resource, links below)
 > **Note:** everlearning's own Tutorial 15 (`Tutorials/BoringTutorials/Tutorial_15_Cracking_Equations.ipynb`) covers factoring/solving quadratics programmatically but not graphing or vertex form — this worksheet is the complementary graphing/geometric view.
 
@@ -214,8 +213,7 @@ Where:
 - $(h, k)$ is the **vertex**
 - $a$ determines **direction** (up/down) and **width**
 
-**🔗 Explore:** [Vertex Form Explorer](https://www.geogebra.org/m/BUD9HAPR)
-*Use sliders to change $a$, $h$, and $k$ and watch the parabola move!*
+**🔗 Explore:** try this in the [GeoGebra graphing calculator](https://www.geogebra.org/calculator) — plot $y = a(x - h)^2 + k$ and add sliders for $a$, $h$, and $k$ to watch the parabola move.
 
 ---
 
@@ -359,7 +357,7 @@ The **discriminant** $b^2 - 4ac$ tells us how many roots to expect:
 | $b^2 - 4ac = 0$ | One repeated root | Touches x-axis once (vertex on x-axis) |
 | $b^2 - 4ac < 0$ | No real roots | Never crosses x-axis |
 
-**🔗 Explore:** [Discriminant Visualizer](https://www.geogebra.org/m/mchqmhst)
+**🔗 Explore:** try this in the [GeoGebra graphing calculator](https://www.geogebra.org/calculator) — plot a quadratic and a slider for one coefficient, and watch how the graph's relationship to the x-axis changes as the discriminant crosses zero.
 
 ---
 

@@ -1,7 +1,6 @@
 # MIT 4.8 & 4.10: Triangle Area, the Sine Rule & the Cosine Rule
 
 > **Learning outcomes:** MIT 5N18396, Section 4 (Geometry & Trigonometry) — 4.8 (solve problems involving the area of a triangle using `area = ½ab sin θ`) and 4.10 (solve practical problems using the Sine Rule and Cosine Rule).
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_05e_laws_sines_cosines.md`
 > **Teaching method:** Pen-and-paper exercises, with real-world applications (astronomy, surveying, crystallography, GPS)
 > **Pairs with:** [`MIT-4.4_4.9_Right-Triangle-Trigonometry.md`](./MIT-4.4_4.9_Right-Triangle-Trigonometry.md) — this worksheet extends trigonometry beyond right triangles to *any* triangle.
 

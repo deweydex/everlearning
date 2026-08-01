@@ -1,9 +1,8 @@
 # MIT 4.1–4.3: Coordinate Geometry (Lines, Slope, Midpoint, Vectors)
 
 > **Learning outcomes:** MIT 5N18396, Section 4 (Geometry & Trigonometry) — 4.1 (linear equations `ax+by+c=0`), 4.2 (slope, parallel/perpendicular lines), 4.3 (midpoint & length of a line segment). Also touches MIT 1.12 (simultaneous equations, 2 unknowns) via Part D.
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_02a_lines_coordinates_vectors.md`
 > **Teaching method:** Pen-and-paper exercises (answer key included below)
-> **Why this file exists:** this was the biggest single gap identified in the coverage analysis — MIT Section 4 (Geometry & Trigonometry) had zero coverage anywhere in `everlearning`. See [`planning/mit-pdp-coverage-gap-analysis.md`](../../../planning/mit-pdp-coverage-gap-analysis.md) for the full picture.
+> **Why this file exists:** MIT Section 4 (Geometry & Trigonometry) previously had no coverage in this curriculum — this worksheet fills that gap.
 
 ---
 

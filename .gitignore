@@ -77,6 +77,10 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# macOS / archive extraction artifacts
+.DS_Store
+__MACOSX/
+
 # IPython
 profile_default/
 ipython_config.py
@@ -127,3 +131,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Generated output from running exercises/solutions locally
+/plots/

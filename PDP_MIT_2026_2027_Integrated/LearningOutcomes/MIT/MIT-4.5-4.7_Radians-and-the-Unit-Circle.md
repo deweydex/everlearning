@@ -1,7 +1,6 @@
 # MIT 4.5–4.7: Degrees, Radians & the Unit Circle
 
 > **Learning outcomes:** MIT 5N18396, Section 4 (Geometry & Trigonometry) — 4.5 (degree and radian measure), 4.6 (define sin/cos/tan using right triangles and the unit circle, with amplitude/phase/period), 4.7 (trigonometric ratios in root/surd form — see the special-angle table in Part C).
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_05a_angles_radians_unit_circle.md`
 > **Teaching method:** Pen-and-paper exercises, with real-world science tie-ins (astronomy, optics, lithography)
 > **Pairs with:** [`MIT-4.4_4.9_Right-Triangle-Trigonometry.md`](./MIT-4.4_4.9_Right-Triangle-Trigonometry.md), [`MIT-3.3_Graphing-Sine-and-Cosine.md`](./MIT-3.3_Graphing-Sine-and-Cosine.md), and [`MIT-4.8_4.10_Triangle-Area-Sine-and-Cosine-Rules.md`](./MIT-4.8_4.10_Triangle-Area-Sine-and-Cosine-Rules.md)
 

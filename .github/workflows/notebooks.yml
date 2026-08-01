@@ -1,0 +1,25 @@
+name: Notebooks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements-ci.txt
+
+      - name: Register kernel
+        run: python -m ipykernel install --user --name python3
+
+      - name: Static validation + execution
+        run: python scripts/ci/check_notebooks.py

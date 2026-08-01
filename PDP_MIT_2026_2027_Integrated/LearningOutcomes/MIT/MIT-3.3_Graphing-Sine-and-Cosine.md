@@ -1,7 +1,6 @@
 # MIT 3.3: Defining and Graphing Trigonometric Functions
 
 > **Learning outcome:** MIT 5N18396, Section 3 (Functions & Calculus) — 3.3 (define and graph simple trigonometric functions). This is an explicit, direct match: amplitude, period, phase shift and vertical shift are exactly the transformation vocabulary the LO calls for.
-> **Pulled in from:** `mathematics` repo, `markdown/worksheet_05c_graphs_sine_cosine.md`
 > **Teaching method:** Pen-and-paper exercises, with real-world science tie-ins (sound, radio, tides, circadian rhythms)
 > **Pairs with:** [`MIT-4.5-4.7_Radians-and-the-Unit-Circle.md`](./MIT-4.5-4.7_Radians-and-the-Unit-Circle.md) (definitions) and [`MIT-4.4_4.9_Right-Triangle-Trigonometry.md`](./MIT-4.4_4.9_Right-Triangle-Trigonometry.md)
 

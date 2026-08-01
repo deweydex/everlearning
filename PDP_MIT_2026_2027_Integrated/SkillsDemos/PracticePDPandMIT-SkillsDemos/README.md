@@ -12,4 +12,4 @@ Note the Skills Demo 2 mismatch: `NB2` and the `SOLUTION_` file are two entirely
 
 ## Relationship to the other SkillsDemos tracks
 
-`BoringPDPandMIT-SkillsDemos/` and `FunPDPandMIT-SkillsDemos/` remain the primary, currently-used skills demonstrations — see [`../../../planning/repo-inventory.md`](../../../planning/repo-inventory.md) for how those two compare. This folder is a preserved bank of prior-year/alternate material, not a replacement for either.
+`BoringPDPandMIT-SkillsDemos/` and `FunPDPandMIT-SkillsDemos/` remain the primary, currently-used skills demonstrations. This folder is a preserved bank of prior-year/alternate material, not a replacement for either.
