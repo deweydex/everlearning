@@ -2,6 +2,8 @@
 
 _Last updated: 2026-08-01_
 
+> **Superseded.** This inventory names everlearning "the current curriculum home". Within a month the tutorials had been converted into `dewlab`, which is now the centre; see [`2026-09-03-repo-consolidation-analysis.md`](./2026-09-03-repo-consolidation-analysis.md) for the current picture across all fifteen repositories. The inventory below is kept as a record of what was here in August.
+
 This is a snapshot of what currently exists across the four repositories we have access to, so we know what's available before deciding what to migrate into `everlearning` and how to organise it. Content was reviewed by actually opening files (worksheets, notebooks, docs), not just reading filenames.
 
 This is step 1 of the curriculum work. Step 2 — mapping this content against the MIT/PDP module descriptor learning outcomes and identifying gaps — is in [`mit-pdp-coverage-gap-analysis.md`](./mit-pdp-coverage-gap-analysis.md) in this same folder.

@@ -2,7 +2,7 @@
 
 _Written 2026-09-03. Successor to `repo-inventory.md` (2026-08-01), which looked at four repositories and named everlearning the curriculum home. A month later that is no longer true, and this document says why and what follows from it._
 
-Scope: the fifteen repositories under `deweydex` that this session could read. One more is referenced from the class pages and was not readable here: `HTML-CSS-SQL-JS`, linked from the Web Authoring page for the week of 13 October. It belongs in this picture and should be looked at before anything is deleted.
+Scope: the fifteen repositories under `deweydex` that this session could read when it started. One more is referenced from the class pages, `HTML-CSS-SQL-JS`, linked from the Web Authoring page for the week of 13 October; it was read later the same day and is covered in section 8, along with three renames and a new repository that appeared while this was being written.
 
 ---
 
@@ -220,3 +220,20 @@ Two READMEs and one demo page. aiml-web-authoring becomes the starter repository
 4. Is the starter repository enough for web authoring for 2026-27, or is it worth doing the Web-cell platform work in dewlab this year?
 5. Is ML1-X private?
 6. Does the PDP descriptor ask for objects and classes? If it does, python-with-ml's OOP notebook is the source and the gap is real; if not, it can be archived without mining.
+
+---
+
+## 8. Addendum, the same evening
+
+Four things changed or came to light after sections 1 to 7 were written.
+
+**Two of the empty repositories were renamed.** `databaseL5` is now `dewadaba` and `AIML_WA` is now `web`; the contents and commit timestamps are identical, so these are renames, not new repositories. Read against section 4.3: the web authoring starter is `web`, seeded in place rather than into `aiml-web-authoring`, which can now be deleted along with `webauthoringdemo`. The renaming of `databaseL5` reads as a decision to keep a database repository after all. Section 4.5's argument stands that the database *tutorials* belong in dewlab, where the SQL engine, `run_query()` and the dataset apparatus already are. What `dewadaba` can hold without contradicting that is everything database-shaped that is not a tutorial: the SQL.js playground from `HTML-CSS-SQL-JS` (below), the quiz from WADB, the reference sheet, the ER-diagram tool link, and the class project brief. If it is meant instead as the dewlab-family name for a database *tool*, in the way `dewmark` names the exam tool and `dewmini` the workspace, that is a different and reasonable thing, and the name fits it better.
+
+**A new repository, `dewmark`, was created today** with a README saying "a project on making assessments with code". dewlab already carries a `dewmark/` folder with a build script, tests, docs and planning for exactly that: exams written as one file, run in a browser, marked on the teacher's machine. The new repository is presumably where that folder is being extracted to. That is a good move: assessment tooling has different users, a different release rhythm and different privacy needs from a public tutorial site. The consolidation map gains a sixth active repository, and dewlab's `dewmark/` folder should go once the extraction is complete, with a pointer left in dewlab's README.
+
+**`HTML-CSS-SQL-JS` is database material, and the best of it.** It is a single-page interactive tutorial (October 2025) with an HTML and CSS section and a SQL section whose playground runs real SQLite queries in the browser through SQL.js, plus a `teacher.html` with solutions and notes. That is more than the dinosaur notebook offers, and it runs without a Jupyter install, which is the notebook's weakness. Its prose is in the same reference-manual register as WADB (it was built the same week by the same means). For the dewlab database module it is a source of exercises and of the browser-side SQL pattern; for `dewadaba` it is the obvious first resident, as the thing students open in class before the tutorials exist.
+
+**Two visibility facts.** `ML1-X` is public, which means the sixteen chapters of *Pattern Classification* are being served from a public repository; making it private, or removing the PDFs from its history, should happen before anything else in the sequence. `python-with-ml` is private, so its three notebooks worth mining are not visible to students in the meantime.
+
+The first phase of section 6 was started the same evening as pull requests: the root-level duplicates removed from Mathematics and its README marked as an archive; the shared LLM guide removed from 2plus1Coding and WADB along with WADB's session logs; the four teaching-module descriptors copied into dewlab's `planning/curriculum/descriptors/` and the two covered empty module folders removed; and this repository's README written to say it is an archive of sources.
+
