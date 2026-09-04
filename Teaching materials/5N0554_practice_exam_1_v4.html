@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Exam 1 — Image Space, Scale, and Hamming Similarity</title>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.4/full/pyodide.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f4f2ee;--surface:#fff;--border:#ccc;
+  --accent:#2c5f8a;--accent-lt:#e4eef7;--accent-dk:#1e4a70;
+  --warn:#b85c00;--muted:#666;--success:#27ae60;--error:#c0392b;
+  --hdr:48px;
+  --mono:"Courier New",monospace;--serif:Georgia,serif;--sans:system-ui,sans-serif;
+  --radius:4px
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:var(--serif);background:var(--bg);color:#222;font-size:16px;line-height:1.65}
+/* Loading screen */
+#loading{position:fixed;inset:0;background:var(--accent);color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:999}
+#loading h1{font-size:1.3rem;font-weight:normal}
+#load-msg{font-size:.87rem;opacity:.85;max-width:360px;text-align:center}
+.spinner{width:40px;height:40px;border:4px solid rgba(255,255,255,.3);
+  border-top-color:#fff;border-radius:50%;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* Name entry */
+#name-screen{position:fixed;inset:0;background:var(--bg);
+  display:none;align-items:center;justify-content:center}
+.name-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:40px 48px;max-width:500px;width:100%;box-shadow:0 2px 16px rgba(0,0,0,.09)}
+.name-card h1{font-size:1.15rem;color:var(--accent);margin-bottom:3px}
+.name-card .meta{font-size:.82rem;color:var(--muted);font-family:var(--sans);margin-bottom:22px}
+.name-card label{display:block;font-size:.86rem;margin-bottom:5px;font-family:var(--sans)}
+.name-card input{width:100%;padding:9px 12px;border:1px solid var(--border);
+  border-radius:var(--radius);font-size:1rem;margin-bottom:14px}
+.name-card input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-lt)}
+.name-card .note{font-size:.79rem;color:var(--muted);font-family:var(--sans);
+  padding:9px 12px;background:var(--accent-lt);border-radius:var(--radius);margin-bottom:16px}
+.btn-start{width:100%;padding:11px;background:var(--accent);color:#fff;border:none;
+  border-radius:var(--radius);font-size:1rem;cursor:pointer}
+.btn-start:hover{background:var(--accent-dk)}
+/* App shell */
+#app{display:none;flex-direction:column;height:100vh}
+#hdr{height:var(--hdr);background:var(--surface);border-bottom:2px solid var(--accent);
+  display:flex;align-items:center;padding:0 16px;gap:8px;flex-shrink:0}
+.h-title{flex:1;font-size:.86rem;color:var(--accent);font-weight:bold;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h-student{font-size:.78rem;color:var(--muted);font-family:var(--sans);white-space:nowrap}
+#save-status{font-size:.72rem;font-family:var(--sans);min-width:50px;text-align:right;color:var(--success)}
+.hbtn{padding:5px 12px;border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--surface);font-size:.75rem;font-family:var(--sans);cursor:pointer;white-space:nowrap}
+.hbtn:hover{background:var(--accent-lt);border-color:var(--accent)}
+.hbtn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hbtn.pri:hover{background:var(--accent-dk)}
+#pyodide-status{font-size:.72rem;font-family:var(--sans);padding:3px 8px;
+  border-radius:10px;white-space:nowrap;background:#eee;color:var(--muted)}
+#pyodide-status.ready{background:#d4edda;color:#155724}
+#progress-wrap{height:3px;background:#ddd;flex-shrink:0}
+#progress-bar{height:100%;background:var(--accent);width:0%;transition:width .4s}
+#main{flex:1;overflow-y:auto;padding:26px 28px 100px;max-width:900px;margin:0 auto;width:100%}
+/* Prose */
+.prose h1{font-size:1.35rem;color:var(--accent);border-bottom:2px solid var(--accent);
+  padding-bottom:6px;margin-bottom:12px}
+.prose h2{font-size:1.1rem;color:var(--accent);border-bottom:1px solid var(--border);
+  padding-bottom:4px;margin:26px 0 10px}
+.prose h3{font-size:.96rem;color:#333;margin:14px 0 5px}
+.prose p{margin-bottom:9px}
+.prose ul,.prose ol{margin:4px 0 9px 22px}
+.prose li{margin-bottom:3px}
+.prose code{background:#ebebeb;padding:1px 5px;border-radius:3px;
+  font-family:var(--mono);font-size:.84em}
+.prose pre{background:#f0f0f0;padding:11px 13px;border-radius:var(--radius);
+  font-family:var(--mono);font-size:.82em;overflow-x:auto;margin-bottom:9px;border:1px solid #ddd}
+.prose strong{font-weight:bold}
+.prose em{font-style:italic}
+.prose hr{border:none;border-top:2px solid var(--border);margin:20px 0}
+.prose table{border-collapse:collapse;width:100%;margin:8px 0;
+  font-family:var(--sans);font-size:.82rem}
+.prose th{background:var(--accent-lt);padding:5px 10px;border:1px solid var(--border)}
+.prose td{padding:5px 10px;border:1px solid var(--border)}
+/* Code cells */
+.cell{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);margin-bottom:14px;overflow:hidden}
+.cell-bar{background:#efefef;border-bottom:1px solid #e0e0e0;
+  padding:4px 10px;display:flex;align-items:center;gap:8px}
+.cell-lbl{font-size:.72rem;color:var(--muted);font-family:var(--sans);flex:1}
+.cell-stat{font-size:.68rem;font-family:var(--sans);color:var(--muted)}
+.cell-stat.ok{color:var(--success)}.cell-stat.err{color:var(--error)}
+.run-btn{padding:3px 11px;background:var(--accent);color:#fff;border:none;
+  border-radius:var(--radius);font-size:.74rem;font-family:var(--sans);cursor:pointer}
+.run-btn:hover{background:var(--accent-dk)}
+.run-btn:disabled{background:#aaa;cursor:not-allowed}
+.CodeMirror{height:auto!important;min-height:80px;font-family:var(--mono);
+  font-size:.86rem;line-height:1.5;border:none}
+.CodeMirror-scroll{overflow-y:hidden!important;overflow-x:auto}
+.cell-out{border-top:1px solid #e8e8e8;background:#fafafa;min-height:0}
+.cell-out:not(:empty){padding:10px 13px}
+.out-text{font-family:var(--mono);font-size:.81rem;white-space:pre-wrap;margin:2px 0}
+.out-err{background:#fff5f5;border:1px solid #f5c6cb;border-radius:var(--radius);
+  padding:7px 10px;margin:4px 0;color:var(--error);font-family:var(--mono);
+  font-size:.76rem;white-space:pre-wrap}
+.out-img{max-width:100%;height:auto;display:block;margin:4px 0}
+.cell.provided{opacity:.85}
+.cell.provided .cell-bar{background:#f5f0e8}
+/* Text answer cells — question shown above textarea, not inside it */
+.text-cell{background:var(--surface);border:1px solid var(--border);
+  border-left:3px solid var(--accent);border-radius:var(--radius);
+  margin-bottom:14px;overflow:hidden}
+.text-cell.answered{border-left-color:var(--success)}
+.text-cell-bar{background:var(--accent-lt);border-bottom:1px solid #c8dded;
+  padding:4px 10px;font-size:.72rem;color:var(--accent);font-family:var(--sans)}
+.text-prompt{padding:10px 13px 8px;font-size:.88rem;color:#333;
+  font-family:var(--serif);line-height:1.65;white-space:pre-wrap;
+  background:#f8fbff;border-bottom:1px solid #dde4ee}
+.text-answer{width:100%;padding:10px 12px;border:none;font-family:var(--serif);
+  font-size:.93rem;resize:vertical;min-height:90px;line-height:1.65;
+  background:transparent;color:#222}
+.text-answer:focus{outline:none;background:#fffef9}
+/* Glossary tooltips */
+.tt{border-bottom:1px dotted var(--accent);cursor:help;position:relative;display:inline}
+.tt::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 5px);left:50%;
+  transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:6px 10px;
+  border-radius:var(--radius);font-size:.74rem;font-family:var(--sans);line-height:1.4;
+  white-space:normal;width:230px;text-align:left;pointer-events:none;
+  opacity:0;transition:opacity .15s;z-index:100}
+.tt:hover::after{opacity:1}
+/* Toast */
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:#333;color:#fff;padding:7px 18px;border-radius:20px;
+  font-family:var(--sans);font-size:.79rem;opacity:0;
+  transition:opacity .2s;pointer-events:none;z-index:500}
+#toast.show{opacity:1}
+/* Print */
+@media print{
+  html,body{height:auto;overflow:auto}
+  #loading,#name-screen,#toast,#hdr .hbtn,#pyodide-status,#save-status{display:none!important}
+  #hdr{position:static;border-bottom:1px solid #999}
+  #app{height:auto;display:block}
+  #main{overflow:visible;padding:0;max-width:100%}
+  body{font-size:11pt;background:#fff;overflow:auto;color:#000}
+  .cell{page-break-inside:avoid;border:1px solid #bbb}
+  .run-btn{display:none}
+  .CodeMirror{background:#f5f5f5!important}
+  .CodeMirror,.CodeMirror *{color:#000!important}
+  .text-answer{border:1px solid #aaa;background:#fafafa}
+}
+
+</style>
+</head>
+<body>
+
+<!-- Exam content lives here as plain text — no escaping needed -->
+<script type="text/exam-content" id="exam-content">
+---
+title: Practice Exam 1 — Image Space, Scale, and Hamming Similarity
+module: 5N0554
+version: practice1-v4
+session: 2025–2026
+total_marks: 30
+duration_minutes: 90
+---
+
+:::glossary
+image space: The complete set of all possible images of a given size. An 8x8 binary image has 2^64 elements in its image space.
+brute force: Checking every possible option in sequence. Always correct but completely impractical for large spaces.
+Hamming distance: The number of positions where two binary strings of the same length differ. Two 8x8 images differing in exactly three pixels have Hamming distance 3.
+neighbourhood: The set of all images within a given Hamming distance of a target. Larger k means a larger neighbourhood.
+parity: Whether the count of 1-bits in a binary string is odd or even. Even parity means an even number of 1s.
+:::
+
+```python setup
+import math
+print("Practice Exam 1 ready.")
+print("Work through questions in order — later cells use functions from earlier ones.")
+print("Run Question 1.1 before anything else in Part 1.")
+print("Run Question 2.2 before anything else in Part 2.")
+```
+
+# Practice Exam 1 — Image Space, Scale, and Hamming Similarity
+
+**Open-book.** You may use your notes, the reference sheet, and any code from the course.
+
+Work through each part in order — later questions use functions you write in earlier ones.
+
+---
+
+## Part 1 — Image Space Fundamentals (15 marks)
+
+*Questions 1.1–1.5 are worth 1 mark each. The extended question is worth 10 marks.*
+
+---
+
+### Question 1.1 (1 mark)
+
+Write `count_images(a, b)` that returns the number of distinct black-and-white images of size a × b (each pixel is 0 or 1). Print results for four sizes to build intuition.
+
+```python
+def count_images(a, b):
+    """Return the number of distinct black-and-white images of size a x b."""
+    # Your code here
+    pass
+
+
+# Once your function is written, print results for these sizes:
+# 4x4, 8x8, 10x10, 16x16
+# Express each as 2^n and as an approximate value.
+# Your printing code here:
+```
+
+---
+
+### Question 1.2 (1 mark)
+
+For square images of size n × n, find the smallest n where the image count first exceeds **one trillion (10¹²)**. Show your working — do not just print a loop until it finds the answer.
+
+*Run Question 1.1 first.*
+
+```python
+# Approach: use the approximation 2^10 ≈ 10^3.
+# We need 2^(n²) > 10^12, i.e. n² > 12 * log2(10) ≈ 12 * 3.32 ≈ 39.86
+# So n² must be at least 40.
+# From this reasoning, what is the smallest integer n?
+
+# Your code here — verify your reasoning by calling count_images:
+```
+
+```text
+Smallest n and your reasoning:
+```
+
+---
+
+### Question 1.3 (1 mark)
+
+Suppose each pixel takes **1 bit** of storage. Storing all possible n × n images requires:
+
+> total bits = count_images(n, n) × (n × n)
+
+At approximately what value of n does this storage first exceed **1 Gigabyte** (≈ 8 × 10⁹ bits)? Try values and report your finding.
+
+*Run Question 1.1 first.*
+
+```python
+# For candidate values of n, calculate total_bits = count_images(n,n) * (n*n)
+# Compare to 8e9 (approximately 1 GB in bits)
+# Print total_bits for each n you try, and state where the threshold is crossed.
+
+# Your code here:
+```
+
+```text
+Approximate value of n where storage exceeds 1 GB:
+```
+
+---
+
+### Question 1.4 (1 mark)
+
+A CPU runs at **10⁹ operations per second** (checking one image per operation). How long would it take to search every possible **5 × 5** image? Then calculate for **6 × 6**. Convert both answers to years.
+
+*Run Question 1.1 first.*
+
+```python
+cpu_ops = 1e9
+seconds_per_year = 365.25 * 24 * 3600
+
+# Calculate search time in years for 5x5 and 6x6 images.
+# Your code here:
+```
+
+---
+
+### Question 1.5 (1 mark)
+
+Looking at your answers to Question 1.4: going from a 5 × 5 image to a 6 × 6 image increases the number of pixels by 11. By approximately what factor does the search time increase? Is this increase linear, exponential, or something else in the number of pixels? Explain why.
+
+```text
+Factor increase in search time from 5x5 to 6x6:
+Explain the relationship:
+```
+
+---
+
+### Extended Question 1 (10 marks) — Building an Image Space Explorer
+
+You will build `image_space_explorer` step by step. Each function depends on the previous ones.
+
+**Context:** A research team needs a single callable tool that, given any image size and processor speed, immediately reports the scale of the problem.
+
+---
+
+#### Part 1a (2 marks)
+
+Write `count_and_store(height, width)` that returns a dictionary with `'num_images'` and `'total_bits'` (bits to store all images, 1 bit per pixel per image). Write `bits_to_unit(total_bits)` that returns a human-readable string using the most appropriate unit — bytes, KB, MB, GB, TB, or PB (1 byte = 8 bits; thresholds: 10³, 10⁶, 10⁹, 10¹², 10¹⁵ bytes).
+
+*Run Question 1.1 first.*
+
+```python
+def count_and_store(height, width):
+    """
+    Return a dictionary with:
+    - 'num_images': total distinct images of this size
+    - 'total_bits': bits to store all images (1 bit per pixel per image)
+    """
+    # Your code here
+    pass
+
+
+def bits_to_unit(total_bits):
+    """
+    Return a string describing total_bits in the most appropriate unit.
+    Example output: '3.40 GB' or '1.21 PB'
+    """
+    # Your code here
+    pass
+
+
+# Test both functions — uncomment once written:
+# print(bits_to_unit(count_and_store(5, 5)['total_bits']))
+# print(bits_to_unit(count_and_store(8, 8)['total_bits']))
+```
+
+---
+
+#### Part 1b (2 marks)
+
+Write `brute_force_time(height, width, ops_per_second)` returning search time in seconds. Write `time_to_unit(seconds)` returning a human-readable string in the most appropriate unit — seconds, minutes, hours, days, or years.
+
+```python
+def brute_force_time(height, width, ops_per_second):
+    """Return seconds to check all images of this size at the given processor speed."""
+    # Your code here
+    pass
+
+
+def time_to_unit(seconds):
+    """
+    Return a string in the most appropriate time unit.
+    Conversions: 60s = 1min, 60min = 1hr, 24hr = 1day, 365.25day = 1year
+    """
+    # Your code here
+    pass
+
+
+# Test — uncomment once written:
+# print(time_to_unit(brute_force_time(8, 8, 1e9)))
+# print(time_to_unit(brute_force_time(12, 12, 1e12)))
+```
+
+---
+
+#### Part 1c (3 marks)
+
+Assemble all four functions into `image_space_explorer(height, width, ops_per_second)` that prints a clear, labelled summary. Run it for three different configurations: 6×6 at CPU speed, 8×8 at GPU speed (10¹²), and 10×10 at GPU speed.
+
+*Run Parts 1a and 1b first.*
+
+```python
+def image_space_explorer(height, width, ops_per_second):
+    """
+    Print a complete summary for a given image size and processor speed.
+    Include: image size, total image count (as 2^n and approximate), 
+    storage for all images, and brute-force search time.
+    Call count_and_store, bits_to_unit, brute_force_time, and time_to_unit.
+    """
+    # Your code here
+    pass
+
+
+# Run for three configurations:
+image_space_explorer(6, 6, 1e9)
+image_space_explorer(8, 8, 1e12)
+image_space_explorer(10, 10, 1e12)
+```
+
+---
+
+#### Part 1d (3 marks)
+
+At what square image size does brute-force search become impractical even at **10¹⁵ operations per second** (a hypothetical future processor one thousand times faster than a current GPU)? Use your explorer to investigate systematically, trying at least five values of n. Then write a paragraph connecting your findings to why machine learning models are trained rather than built by exhaustive search.
+
+*Run Part 1c first.*
+
+```python
+# Investigate systematically. Define "impractical" as: search time > 1 year.
+# Try at least 5 values of n and record results.
+# Your code here:
+```
+
+```text
+At what n does search time exceed 1 year even at 10^15 ops/sec?
+
+Paragraph connecting this to why machine learning models are trained rather than searched:
+```
+
+---
+
+## Part 2 — Hamming Distance and Image Similarity (15 marks)
+
+*Questions 2.1–2.5 are worth 1 mark each. The extended question is worth 10 marks.*
+
+The Hamming distance between two images of the same size is the number of pixel positions where they differ.
+
+Below are two 8 × 8 images of the letter I, represented as grids of 0s and 1s.
+
+**Image A (clean):**
+```
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 0 0 0 0 0
+```
+
+**Image B (one pixel changed):**
+```
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 0 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 1 1 0 0 0
+0 0 0 0 0 0 0 0
+```
+
+---
+
+### Question 2.1 (1 mark)
+
+By inspection of Image A and Image B above, state the Hamming distance between them and identify which pixel was changed (give its row and column, counting from 0). Then encode both images as Python lists and verify using subtraction.
+
+```python
+import numpy as np
+
+image_a = np.array([
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,0,0,0,0,0],
+])
+
+image_b = np.array([
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,0,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,1,1,0,0,0],
+    [0,0,0,0,0,0,0,0],
+])
+
+# Calculate the Hamming distance by counting positions where the images differ.
+# Hint: (image_a != image_b) gives a boolean array.
+# Your code here:
+```
+
+```text
+Hamming distance (by inspection):
+Changed pixel location (row, col):
+```
+
+---
+
+### Question 2.2 (1 mark)
+
+Write `hamming_distance(img_a, img_b)` that returns the Hamming distance between any two images of the same size. Test it on Image A vs Image B, and on Image A vs itself.
+
+```python
+def hamming_distance(img_a, img_b):
+    """Return the Hamming distance between two images of the same size."""
+    # Your code here
+    pass
+
+
+# Test your function:
+# print("A vs B:", hamming_distance(image_a, image_b))   # should be 1
+# print("A vs A:", hamming_distance(image_a, image_a))   # should be 0
+```
+
+---
+
+### Question 2.3 (1 mark)
+
+How many distinct images are within Hamming distance **exactly 2** of Image A? The number of ways to choose which 2 pixels to flip from 64 total pixels is C(64, 2). Calculate this value, then verify it using `math.comb`.
+
+```python
+# C(64, 2) = 64! / (2! * 62!) = (64 * 63) / 2
+# Calculate by hand first, then verify with math.comb(64, 2).
+
+# Your code here:
+```
+
+---
+
+### Question 2.4 (1 mark)
+
+Write `count_within_hamming(num_pixels, k)` that returns the number of images at Hamming distance **exactly k** from a fixed target image with `num_pixels` total pixels. Use `math.comb`.
+
+Then use it to print the neighbourhood size for k = 0, 1, 2, 3, 4 for an 8 × 8 image (64 pixels).
+
+*Run Question 1.1 first so `count_images` is available for the fraction calculation.*
+
+```python
+def count_within_hamming(num_pixels, k):
+    """
+    Return the number of images at Hamming distance exactly k
+    from a fixed target with num_pixels total pixels.
+    """
+    # Your code here
+    pass
+
+
+# Print neighbourhood size and fraction of all 8x8 images for k = 0 to 4:
+# Your code here:
+```
+
+---
+
+### Question 2.5 (1 mark)
+
+Suppose we have 10 digit classes (0–9), each with one canonical 8 × 8 image. We accept all images within Hamming distance 1 of a canonical image as belonging to that class. Assuming the 10 neighbourhoods do not overlap, calculate the total fraction of all 8 × 8 images that would be classified as some digit. Does this surprise you?
+
+*Run Questions 1.1 and 2.4 first.*
+
+```python
+# Each digit's neighbourhood (k=0 and k=1) has: 1 + count_within_hamming(64, 1) images
+# 10 digits * neighbourhood_size / count_images(8, 8) = fraction classified
+
+# Your code here:
+```
+
+```text
+Fraction of all 8x8 images classified as some digit:
+Does this surprise you? What does it imply about how image classifiers work?
+```
+
+---
+
+### Extended Question 2 (10 marks) — Hamming Neighbourhoods and Letter Probability
+
+---
+
+#### Part 2a (2 marks)
+
+Write `neighbourhood_size(num_pixels, max_k)` that returns the total number of images within Hamming distance **at most** max_k of a target (summing from k=0 up to max_k inclusive). Then write `letter_neighbourhood(num_pixels, max_k)` that returns the same thing — you will use this to represent how many images a classifier accepts as a given letter.
+
+*Run Question 2.4 first.*
+
+```python
+def neighbourhood_size(num_pixels, max_k):
+    """
+    Return total images within Hamming distance at most max_k of a target.
+    This is the sum of count_within_hamming(num_pixels, k) for k from 0 to max_k.
+    """
+    # Your code here
+    pass
+
+
+# Test: neighbourhood_size(64, 0) should be 1
+#       neighbourhood_size(64, 1) should be 1 + 64 = 65
+# Your code here:
+```
+
+---
+
+#### Part 2b (2 marks)
+
+Suppose 26 letters each accept all images within Hamming distance `max_k` of a canonical 8 × 8 image. Assuming all 26 neighbourhoods are **disjoint** (no image is accepted by two different letters), write `any_letter_probability(num_letters, num_pixels, max_k)` that returns the probability of randomly selecting an image from all 8 × 8 images and having it classified as any letter.
+
+*Run Part 2a first.*
+
+```python
+def any_letter_probability(num_letters, num_pixels, max_k):
+    """
+    Return the probability that a randomly chosen image represents any letter.
+    Assumptions:
+    - num_letters letters, each accepting neighbourhood_size(num_pixels, max_k) images
+    - All letter neighbourhoods are disjoint (no overlap)
+    - Each image is equally likely to be selected
+    """
+    # Your code here
+    pass
+
+
+# Calculate and print the probability for max_k = 0, 1, 2, 3, 4 for 26 letters on 8x8 images:
+# Your code here:
+```
+
+---
+
+#### Part 2c (2 marks)
+
+At what value of `max_k` does `any_letter_probability` first exceed **1%** for 26 letters on 8 × 8 images? At what value does the disjoint assumption **break down** — i.e., at what max_k would 26 neighbourhoods together require more images than exist in the entire 8 × 8 image space?
+
+*Run Part 2b first.*
+
+```python
+# Find max_k where probability first exceeds 1%:
+# Find max_k where 26 * neighbourhood_size(64, max_k) > count_images(8, 8):
+
+# Your code here:
+```
+
+```text
+max_k where probability first exceeds 1%:
+max_k where disjoint assumption breaks down:
+```
+
+---
+
+#### Part 2d (4 marks)
+
+Write a brief analysis (one paragraph) that addresses: what the probability calculation reveals about the difficulty of randomly stumbling upon a valid letter image, why the disjoint assumption is unrealistic for letter recognition, what this implies about how a real neural network must work differently from a simple neighbourhood lookup, and one practical reason why Hamming distance alone is not sufficient as a similarity measure for handwritten characters.
+
+```text
+Analysis:
+```
+
+---
+
+*End of Practice Exam 1. Export your answers using the button in the header.*
+
+</script>
+
+<div id="loading">
+  <div class="spinner"></div>
+  <h1 id="load-title">Practice Exam 1 — Image Space, Scale, and Hamming Similarity</h1>
+  <p id="load-msg">Loading Python — first run takes about 20 seconds, then cached...</p>
+</div>
+
+<div id="name-screen">
+  <div class="name-card">
+    <h1 id="card-title">Examination</h1>
+    <p class="meta" id="card-meta"></p>
+    <label for="sname">Your full name:</label>
+    <input type="text" id="sname" placeholder="e.g. Agnes Nitt" autocomplete="off">
+    <p class="note">Written answers save automatically to this browser. Export a JSON copy before you finish.</p>
+    <button class="btn-start" onclick="beginExam()">Begin</button>
+  </div>
+</div>
+
+<div id="app">
+  <div id="hdr">
+    <span class="h-title" id="h-title"></span>
+    <span class="h-student" id="h-student"></span>
+    <span id="pyodide-status">Python loading...</span>
+    <span id="save-status"></span>
+    <button class="hbtn" onclick="exportJSON()">Export answers</button>
+    <button class="hbtn pri" onclick="window.print()">Print / PDF</button>
+  </div>
+  <div id="progress-wrap"><div id="progress-bar"></div></div>
+  <div id="main"></div>
+</div>
+<div id="toast"></div>
+
+<script>
+const EXAM_MARKDOWN = document.getElementById('exam-content').textContent;
+const EXAM_TOOLS_CODE = `
+import io, base64, sys
+try:
+  from js import document, window
+  _IN_PYODIDE = True
+except ImportError:
+  _IN_PYODIDE = False
+  class _Stub:
+    def __getattr__(self, n): return _Stub()
+    def __call__(self, *a, **kw): return _Stub()
+  document = window = _Stub()
+
+def _current_output():
+  if not _IN_PYODIDE: return None
+  eid = window.examCurrentOutputId
+  if not eid: raise RuntimeError("exam_tools: no output context — run this inside an exam cell")
+  return document.getElementById(eid)
+
+def _append(html):
+  el = _current_output()
+  if el: el.insertAdjacentHTML("beforeend", html)
+
+def _esc(s):
+  return str(s).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;")
+
+def show(obj):
+  'Display a matplotlib Figure or any object inline in the exam output.'
+  try:
+    import matplotlib.figure as mpl_fig
+    if isinstance(obj, mpl_fig.Figure):
+      import matplotlib.pyplot as plt
+      buf = io.BytesIO()
+      obj.savefig(buf, format="png", bbox_inches="tight", dpi=100)
+      buf.seek(0)
+      b64 = base64.b64encode(buf.read()).decode("ascii")
+      buf.close()
+      plt.close(obj)
+      _append(f'<img src="data:image/png;base64,{b64}" class="out-img" alt="figure">')
+      return
+  except ImportError:
+    pass
+  safe = _esc(str(obj))
+  _append(f'<pre class="out-text">{safe}</pre>')
+`;
+
+let pyodide = null, pyReady = false;
+let meta = {}, cells = [], editors = {}, textAnswers = {};
+let studentName = '';
+const storageKey = () => 'cm_exam_' + (meta.version||'v1') + '_' + studentName.replace(/\W/g,'_').toLowerCase();
+
+window.onload = async () => {
+  meta = parseFrontmatter(EXAM_MARKDOWN);
+  document.getElementById('load-title').textContent = meta.title || 'Examination';
+  document.title = meta.title || 'Examination';
+  try { await initPyodide(); } catch(e) {
+    document.getElementById('load-msg').textContent = 'Python failed to load: ' + e.message;
+    return;
+  }
+  showNameScreen();
+};
+
+async function initPyodide() {
+  setMsg('Loading Python runtime (step 1 of 2)...');
+  pyodide = await loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.27.4/full/' });
+  setMsg('Installing packages (step 2 of 2)...');
+  await pyodide.loadPackage(['micropip']);
+  await pyodide.runPythonAsync(`
+import micropip
+await micropip.install(["numpy", "matplotlib"])
+`);
+  pyodide.FS.writeFile('/exam_tools.py', EXAM_TOOLS_CODE);
+  await pyodide.runPythonAsync(`
+import sys, io, matplotlib
+sys.path.insert(0, '/')
+matplotlib.use('Agg')
+import exam_tools
+sys.stdout = io.StringIO()
+`);
+  pyReady = true;
+}
+
+function setMsg(t) { document.getElementById('load-msg').textContent = t; }
+
+function showNameScreen() {
+  document.getElementById('card-title').textContent = meta.title || 'Examination';
+  document.getElementById('card-meta').textContent =
+    [meta.module, meta.version, meta.session].filter(Boolean).join(' — ');
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('name-screen').style.display = 'flex';
+  document.getElementById('sname').addEventListener('keydown', e => {
+    if (e.key === 'Enter') beginExam();
+  });
+}
+
+async function beginExam() {
+  studentName = document.getElementById('sname').value.trim();
+  if (!studentName) { alert('Please enter your full name.'); return; }
+  try {
+    const s = localStorage.getItem(storageKey());
+    if (s) textAnswers = JSON.parse(s);
+  } catch(e) {}
+  document.getElementById('name-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+  document.getElementById('h-title').textContent = [meta.title, meta.module].filter(Boolean).join(' — ');
+  document.getElementById('h-student').textContent = studentName;
+  if (pyReady) {
+    document.getElementById('pyodide-status').textContent = 'Python ready';
+    document.getElementById('pyodide-status').className = 'ready';
+  }
+  cells = parseExam(EXAM_MARKDOWN);
+  renderExam();
+  await runSetupCells();
+  updateProgress();
+}
+
+function parseFrontmatter(text) {
+  const m = text.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!m) return {};
+  const o = {};
+  m[1].split('\n').forEach(line => {
+    const idx = line.indexOf(':');
+    if (idx > 0) o[line.slice(0,idx).trim()] = line.slice(idx+1).trim();
+  });
+  return o;
+}
+
+let GLOSSARY = {};
+function parseGlossary(text) {
+  const g = {};
+  const m = text.match(/:::glossary\n([\s\S]*?):::/);
+  if (!m) return g;
+  m[1].split('\n').forEach(line => {
+    const idx = line.indexOf(':');
+    if (idx > 0) {
+      const term = line.slice(0,idx).trim();
+      const def  = line.slice(idx+1).trim();
+      if (term && def) g[term.toLowerCase()] = {term, def};
+    }
+  });
+  return g;
+}
+
+function parseExam(text) {
+  const body = text.replace(/^---\n[\s\S]*?\n---\n/, '').replace(/:::glossary\n[\s\S]*?:::/, '');
+  const out = [];
+  const fence = /^```(python(?:\s+(?:setup|provided))?|text)\s*\n([\s\S]*?)^```\s*$/gm;
+  let last = 0, codeIdx = 0, m;
+  while ((m = fence.exec(body)) !== null) {
+    if (m.index > last) out.push({type:'markdown', content: body.slice(last, m.index)});
+    const tag = m[1].trim(), src = m[2];
+    if      (tag === 'python setup')    out.push({type:'setup',    content:src});
+    else if (tag === 'python provided') out.push({type:'provided', content:src});
+    else if (tag === 'text')            out.push({type:'text',     content:src.trim(), id:'ta_'+(codeIdx++)});
+    else                                out.push({type:'code',     content:src, id:'cell_'+(codeIdx++),
+                                                  studentCode:src, outputHTML:'', lastRun:null, hasError:false});
+    last = m.index + m[0].length;
+  }
+  if (last < body.length) out.push({type:'markdown', content: body.slice(last)});
+  return out;
+}
+
+function renderMD(text) {
+  const inlineFmt = s => {
+    s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    Object.values(GLOSSARY).forEach(({term, def}) => {
+      const re = new RegExp(`\\b(${term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})\\b`, 'gi');
+      s = s.replace(re, mm => `<span class="tt" data-tip="${esc(def)}">${mm}</span>`);
+    });
+    return s;
+  };
+  let html = '', inList = false, listTag = '';
+  const closeList = () => { if(inList){html+=`</${listTag}>\n`;inList=false;listTag='';} };
+  const lines = text.split('\n');
+  let i = 0;
+  while (i < lines.length) {
+    const l = lines[i];
+    if (/^#{1,6}\s/.test(l)) {
+      closeList();
+      const lvl = l.match(/^(#+)/)[1].length;
+      const t = inlineFmt(l.replace(/^#+\s+/,''));
+      html += lvl<=2 ? `<h${lvl}>${t}</h${lvl}>\n` : `<h3>${t}</h3>\n`;
+      i++; continue;
+    }
+    if (/^---+$/.test(l.trim())) { closeList(); html+='<hr>\n'; i++; continue; }
+    if (/^[-*]\s+/.test(l)) {
+      if (!inList||listTag!=='ul'){closeList();html+='<ul>\n';inList=true;listTag='ul';}
+      html+=`<li>${inlineFmt(l.replace(/^[-*]\s+/,''))}</li>\n`;i++;continue;
+    }
+    if (/^\d+\.\s+/.test(l)) {
+      if (!inList||listTag!=='ol'){closeList();html+='<ol>\n';inList=true;listTag='ol';}
+      html+=`<li>${inlineFmt(l.replace(/^\d+\.\s+/,''))}</li>\n`;i++;continue;
+    }
+    if (l.startsWith('|')) {
+      closeList();
+      const rows=[];
+      while(i<lines.length&&lines[i].startsWith('|')){rows.push(lines[i]);i++;}
+      html+='<table>\n';
+      rows.forEach((r,ri)=>{
+        const cells=r.split('|').slice(1,-1).map(c=>c.trim());
+        if(ri===1&&cells.every(c=>/^[-:]+$/.test(c)))return;
+        const tag=ri===0?'th':'td';
+        html+='<tr>'+cells.map(c=>`<${tag}>${inlineFmt(c)}</${tag}>`).join('')+'</tr>\n';
+      });
+      html+='</table>\n';continue;
+    }
+    closeList();
+    if (l.trim()===''){i++;continue;}
+    let para=l; i++;
+    while(i<lines.length&&lines[i].trim()!==''&&!/^[#|*\-\d]/.test(lines[i])&&!/^---+$/.test(lines[i].trim())){
+      para+=' '+lines[i];i++;
+    }
+    html+=`<p>${inlineFmt(para)}</p>\n`;
+  }
+  closeList();
+  return html;
+}
+
+function renderExam() {
+  GLOSSARY = parseGlossary(EXAM_MARKDOWN);
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+  cells.forEach((cell, idx) => {
+    if      (cell.type==='markdown') main.appendChild(buildMarkdown(cell));
+    else if (cell.type==='setup')    {}
+    else if (cell.type==='provided') main.appendChild(buildProvided(cell, idx));
+    else if (cell.type==='code')     main.appendChild(buildCodeCell(cell, idx));
+    else if (cell.type==='text')     main.appendChild(buildTextCell(cell));
+  });
+}
+
+function buildMarkdown(cell) {
+  const div = document.createElement('div');
+  div.className = 'prose';
+  div.innerHTML = renderMD(cell.content);
+  return div;
+}
+
+function buildProvided(cell, idx) {
+  const wrap = document.createElement('div');
+  wrap.className = 'cell provided';
+  wrap.innerHTML = `<div class="cell-bar"><span class="cell-lbl">Provided code — read only</span></div>`;
+  const ta = document.createElement('textarea');
+  wrap.appendChild(ta);
+  const editor = CodeMirror.fromTextArea(ta, {mode:'python', readOnly:true,
+    lineNumbers:true, theme:'eclipse', lineWrapping:true});
+  editor.setValue(cell.content.trimEnd());
+  editor.refresh();
+  return wrap;
+}
+
+function buildCodeCell(cell, idx) {
+  const wrap = document.createElement('div');
+  wrap.className = 'cell';
+  wrap.id = 'wrap_' + cell.id;
+  const bar = document.createElement('div');
+  bar.className = 'cell-bar';
+  bar.innerHTML = `<span class="cell-lbl">Python</span>
+    <span class="cell-stat" id="stat_${cell.id}"></span>
+    <button class="run-btn" id="btn_${cell.id}" onclick="runCell('${cell.id}')">Run</button>`;
+  wrap.appendChild(bar);
+  const ta = document.createElement('textarea');
+  wrap.appendChild(ta);
+  const editor = CodeMirror.fromTextArea(ta, {
+    mode:'python', lineNumbers:true, theme:'eclipse', lineWrapping:true,
+    extraKeys:{Tab: cm=>cm.replaceSelection('    ','end')}
+  });
+  editor.setValue(cell.studentCode.trimEnd());
+  setTimeout(() => editor.refresh(), 0);   /* renders without needing a click */
+  editor.on('change', () => { cell.studentCode = editor.getValue(); });
+  editors[cell.id] = editor;
+  const out = document.createElement('div');
+  out.className = 'cell-out';
+  out.id = 'out_' + cell.id;
+  if (cell.outputHTML) out.innerHTML = cell.outputHTML;
+  wrap.appendChild(out);
+  return wrap;
+}
+
+function buildTextCell(cell) {
+  const wrap = document.createElement('div');
+  wrap.className = 'text-cell';
+  wrap.id = 'textwrap_' + cell.id;
+  const bar = document.createElement('div');
+  bar.className = 'text-cell-bar';
+  bar.textContent = 'Written answer';
+  wrap.appendChild(bar);
+  /* question text shown above the textarea, not inside it as a placeholder */
+  if (cell.content) {
+    const prompt = document.createElement('div');
+    prompt.className = 'text-prompt';
+    prompt.textContent = cell.content;
+    wrap.appendChild(prompt);
+  }
+  const ta = document.createElement('textarea');
+  ta.className = 'text-answer';
+  ta.placeholder = 'Write your answer here...';
+  ta.id = 'textans_' + cell.id;
+  if (textAnswers[cell.id]) {
+    ta.value = textAnswers[cell.id];
+    wrap.classList.add('answered');
+  }
+  ta.addEventListener('input', () => {
+    textAnswers[cell.id] = ta.value;
+    wrap.classList.toggle('answered', ta.value.trim().length > 0);
+    saveAnswers();
+    updateProgress();
+  });
+  wrap.appendChild(ta);
+  return wrap;
+}
+
+async function runSetupCells() {
+  for (const cell of cells) {
+    if (cell.type === 'setup') {
+      try { await pyodide.runPythonAsync(cell.content); } catch(e) { console.warn('Setup error:', e); }
+    }
+  }
+}
+
+let isRunning = false;
+async function runCell(id) {
+  if (!pyReady || isRunning) return;
+  isRunning = true;
+  const cell = cells.find(c => c.id === id);
+  if (!cell) { isRunning=false; return; }
+  const btn  = document.getElementById('btn_'+id);
+  const stat = document.getElementById('stat_'+id);
+  const out  = document.getElementById('out_'+id);
+  btn.disabled = true; btn.textContent = 'Running...';
+  stat.textContent = ''; stat.className = 'cell-stat';
+  out.innerHTML = '';
+  window.examCurrentOutputId = 'out_'+id;
+  const code = editors[id] ? editors[id].getValue() : cell.studentCode;
+  try {
+    await pyodide.runPythonAsync(`import sys, io; sys.stdout = io.StringIO()`);
+    await pyodide.runPythonAsync(code);
+    const stdout = await pyodide.runPythonAsync(`_s=sys.stdout.getvalue(); sys.stdout=io.StringIO(); _s`);
+    if (stdout) out.innerHTML += `<pre class="out-text">${esc(stdout)}</pre>`;
+    stat.textContent = 'OK'; stat.className = 'cell-stat ok';
+    cell.lastRun = new Date();
+  } catch(e) {
+    const msg = String(e.message || e).replace(/File "<exec>"[^\n]*/g, '').trim();
+    out.innerHTML = `<div class="out-err">${esc(msg)}</div>`;
+    stat.textContent = 'Error'; stat.className = 'cell-stat err';
+    cell.hasError = true;
+  }
+  cell.outputHTML = out.innerHTML;
+  btn.disabled = false; btn.textContent = 'Run';
+  window.examCurrentOutputId = null;
+  isRunning = false;
+  updateProgress();
+}
+
+function saveAnswers() {
+  try {
+    localStorage.setItem(storageKey(), JSON.stringify(textAnswers));
+    const s = document.getElementById('save-status');
+    s.textContent = 'Saved';
+    clearTimeout(saveAnswers._t);
+    saveAnswers._t = setTimeout(()=>{s.textContent='';}, 1800);
+  } catch(e){}
+}
+
+function exportJSON() {
+  const codeAnswers = {};
+  cells.filter(c=>c.type==='code').forEach(c => {
+    codeAnswers[c.id] = {code: editors[c.id]?.getValue() || c.studentCode, output: c.outputHTML};
+  });
+  const blob = new Blob([JSON.stringify({
+    student: studentName, module: meta.module, version: meta.version,
+    exported: new Date().toISOString(), textAnswers, codeAnswers
+  }, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  const safe = studentName.replace(/[^a-z0-9]/gi,'_').toLowerCase();
+  a.href = URL.createObjectURL(blob);
+  a.download = `exam_${safe}_${meta.version||'v1'}.json`;
+  a.click();
+  showToast('Answers exported');
+}
+
+function updateProgress() {
+  const textCells = cells.filter(c=>c.type==='text');
+  const codeCells = cells.filter(c=>c.type==='code');
+  const doneTxt   = textCells.filter(c=>(textAnswers[c.id]||'').trim().length>0).length;
+  const doneCode  = codeCells.filter(c=>c.lastRun).length;
+  const total = textCells.length + codeCells.length;
+  const done  = doneTxt + doneCode;
+  document.getElementById('progress-bar').style.width = (total>0?(done/total)*100:0)+'%';
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function showToast(msg) {
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2000);
+}
+
+</script>
+</body>
+</html>
