@@ -1,0 +1,7 @@
+series: Python and NumPy Refresher
+order:
+  - 01-numpy
+  - 02-matplotlib
+  - 03-lists-and-matrices-practice-page-1
+  - 03-lists-and-matrices-practice-page-2
+  - 04-list-comprehensions-practice

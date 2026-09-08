@@ -1,0 +1,90 @@
+# Changes from V2 to V3: Programming-and-Design-Principles-5N2927
+
+V3 is built from V2 by `_reorg/build_v3.py`. It is the language-and-environment pass described in the critique: outcome lists moved to the end, tables of contents removed, praise and reassurance removed, mastery and drill headings renamed, a looking-back cell with the learner's own question at the end of every core notebook, a question posed after examples that judge a person, a way of knowing after the learner cells of the notebooks written for this collection, the SQL introduction freed of its installation, an entry notebook per course, and Option D on the assessment brief. Nothing else was edited.
+
+- `Programming-and-Design-Principles-5N2927/Object-Oriented-Programming/OOP_01_Interactive_Map.ipynb`: praise lines removed
+- `Programming-and-Design-Principles-5N2927/Object-Oriented-Programming/OOP_01_Interactive_Map.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Object-Oriented-Programming/OOP_02_Hitchhikers_Guide.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Object-Oriented-Programming/OOP_03_Shapes_and_a_Game_Map.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Object-Oriented-Programming/OOP_03_Shapes_and_a_Game_Map.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page1of3.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page1of3.ipynb`: problem-posing question added to an example that judges a person
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page1of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page2of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page3of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page1of2.ipynb`: praise lines removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page1of2.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page1of2.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page1of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page2of2.ipynb`: praise lines removed (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page2of2.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page2of2.ipynb`: "Challenge" headings renamed "Try this"
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_00_Getting_Started__page2of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_01_History_and_ML_Basics.ipynb`: praise lines removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_01_History_and_ML_Basics.ipynb`: "Exercise" headings renamed "Your turn" (4)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_01_History_and_ML_Basics.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_01_History_and_ML_Basics.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page1of3.ipynb`: reassurance removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page1of3.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page1of3.ipynb`: problem-posing question added to an example that judges a person
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page1of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page2of3.ipynb`: problem-posing question added to an example that judges a person
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page2of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page3of3.ipynb`: praise lines removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page3of3.ipynb`: "Exercise" headings renamed "Your turn" (4)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page3of3.ipynb`: problem-posing question added to an example that judges a person
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_02_Algorithms_and_Problem_Solving__page3of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_03_Variables_Types_Operators.ipynb`: praise lines removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_03_Variables_Types_Operators.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_03_Variables_Types_Operators.ipynb`: "Challenge" headings renamed "Try this"
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_03_Variables_Types_Operators.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_03_Variables_Types_Operators.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_03_Variables_Types_Operators.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_05_Iteration_and_Loops__page1of3.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_05_Iteration_and_Loops__page1of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_05_Iteration_and_Loops__page2of3.ipynb`: "Challenge" headings renamed "Try this"
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_05_Iteration_and_Loops__page2of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_05_Iteration_and_Loops__page3of3.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_06_Lists_and_Comprehensions__page1of2.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_06_Lists_and_Comprehensions__page1of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_06_Lists_and_Comprehensions__page2of2.ipynb`: praise lines removed (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_06_Lists_and_Comprehensions__page2of2.ipynb`: "Challenge" headings renamed "Try this"
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_06_Lists_and_Comprehensions__page2of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_07_Functions_and_Modularisation.ipynb`: praise lines removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_07_Functions_and_Modularisation.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_07_Functions_and_Modularisation.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_08_Testing_and_Debugging.ipynb`: praise lines removed (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_08_Testing_and_Debugging.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_08_Testing_and_Debugging.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_09_Math_and_Random.ipynb`: "Exercise" headings renamed "Your turn" (3)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_09_Math_and_Random.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_09_Math_and_Random.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_10_NumPy.ipynb`: "Exercise" headings renamed "Your turn" (3)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_10_NumPy.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_10_NumPy.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_11_Matplotlib.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_11_Matplotlib.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_11_Matplotlib.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_12_Object_Oriented_Programming.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_12_Object_Oriented_Programming.ipynb`: table of contents removed
+- `Programming-and-Design-Principles-5N2927/Tutorials/Tutorial_12_Object_Oriented_Programming.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Practice/Enrichment_Recursive_Algorithms.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_List_Comprehensions.ipynb`: "Mastering" removed from titles
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_List_Comprehensions.ipynb`: "Challenge" headings renamed "Try this" (18)
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_List_Comprehensions.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_List_Comprehensions.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Lists_and_Matrices__page1of2.ipynb`: "Challenge" headings renamed "Try this" (9)
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Lists_and_Matrices__page1of2.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Lists_and_Matrices__page1of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Lists_and_Matrices__page2of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Lists_and_Matrices__page2of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Loops__page1of2.ipynb`: "Mastering" removed from titles
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Loops__page1of2.ipynb`: "Challenge" headings renamed "Try this" (7)
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Loops__page1of2.ipynb`: outcomes moved to the end
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Loops__page1of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Loops__page2of2.ipynb`: "Challenge" headings renamed "Try this" (11)
+- `Programming-and-Design-Principles-5N2927/Practice/Practice_Loops__page2of2.ipynb`: looking-back cell added
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page1of3.ipynb`: a way of knowing added after 3 learner cells: the expected result stated so the learner can tell they are right without a teacher
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page2of3.ipynb`: a way of knowing added after 3 learner cells: the expected result stated so the learner can tell they are right without a teacher
+- `Programming-and-Design-Principles-5N2927/Tutorials/New_Tutorial_04_Making_Decisions__page1of3.ipynb`: the loan-approval exercise now poses the problem it contains: who chooses the threshold and what happens to the person just below it
+- `Programming-and-Design-Principles-5N2927/New_00_Your_Questions.ipynb`: new: an entry notebook that asks for the situations from the learner's own life the course might reach, and tells the teacher what to do with them

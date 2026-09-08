@@ -1,0 +1,16 @@
+series: Neural Networks
+order:
+  - 01-forward-pass-colour-classifier-page-1
+  - 01-forward-pass-colour-classifier-page-2
+  - 01-forward-pass-colour-classifier-page-3
+  - 02-neural-networks-complete-introduction-page-1
+  - 02-neural-networks-complete-introduction-page-2
+  - 03-data-pipeline-and-function-approximation-page-1
+  - 03-data-pipeline-and-function-approximation-page-2
+  - 04-building-the-network-class-page-1
+  - 04-building-the-network-class-page-2
+  - 04-building-the-network-class-page-3
+  - 05-handwritten-letters-emnist-page-1
+  - 05-handwritten-letters-emnist-page-2
+  - 06-interactive-lab-nist
+  - 07-from-scratch-to-a-library

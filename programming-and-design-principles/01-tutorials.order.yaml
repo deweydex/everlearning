@@ -1,0 +1,23 @@
+series: Tutorials
+order:
+  - tutorial-00-getting-started-page-1
+  - tutorial-00-getting-started-page-2
+  - tutorial-01-history-and-ml-basics
+  - tutorial-02-algorithms-and-problem-solving-page-1
+  - tutorial-02-algorithms-and-problem-solving-page-2
+  - tutorial-02-algorithms-and-problem-solving-page-3
+  - tutorial-03-variables-types-operators
+  - tutorial-04-making-decisions-page-1
+  - tutorial-04-making-decisions-page-2
+  - tutorial-04-making-decisions-page-3
+  - tutorial-05-iteration-and-loops-page-1
+  - tutorial-05-iteration-and-loops-page-2
+  - tutorial-05-iteration-and-loops-page-3
+  - tutorial-06-lists-and-comprehensions-page-1
+  - tutorial-06-lists-and-comprehensions-page-2
+  - tutorial-07-functions-and-modularisation
+  - tutorial-08-testing-and-debugging
+  - tutorial-09-math-and-random
+  - tutorial-10-numpy
+  - tutorial-11-matplotlib
+  - tutorial-12-object-oriented-programming

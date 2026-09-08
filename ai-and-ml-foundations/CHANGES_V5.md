@@ -1,0 +1,6 @@
+# Changes from V4 to V5: ai-and-ml-foundations
+
+V5 pulls specific gap-filling material in from deweydex/everlearning, adapted to dewlearn pages and to the house rules the V2/V3 passes established (no praise or reassurance, mastery/exercise headings renamed, split to platform size with setup carried forward, a closing Looking-back reflection, no learner-facing trace of where the material came from). Recorded here for maintainers; nothing below is visible to a learner.
+
+- new pages `chain-product-and-quotient-rules`, `series-and-the-shape-of-a-curve` after Integrals at Sea: the chain, product and quotient rules, checked against SymPy and tied to backpropagation; and building e^x and the sigmoid out of a power series, tied to how a network's activation functions actually work under a library call. Written for this collection, inspired by the coverage of deweydex/everlearning's Teaching materials/Maths_worksheets/worksheet_04c_advanced_rules.md and worksheet_04d_transcendental_series.md rather than adapted from them directly.
+- 8 learner cells across the From-0-to-Markov weeks 0, 1-2 and 3-4 given a hint, a how-you-will-know line and a gated answer fold, matched against deweydex/everlearning's SOLUTION_Week00/01-02/03-04 notebooks by the shape of the stub each solves

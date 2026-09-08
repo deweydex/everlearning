@@ -1,0 +1,9 @@
+series: Projects / Hidden in Plain Sight
+order:
+  - part-1-greyscale-encoding-page-1
+  - part-1-greyscale-encoding-page-2
+  - part-1-greyscale-encoding-page-3
+  - part-2a-frequency-analysis-and-caesar-ciphers
+  - part-2b-n-grams-and-substitution-ciphers
+  - part-3-rgb-encoding
+  - part-4-detecting-hidden-messages

@@ -1,0 +1,13 @@
+series: Probability and Statistics
+order:
+  - 01-probability-foundations-page-1
+  - 01-probability-foundations-page-2
+  - 02-counting-and-combinatorics-page-1
+  - 02-counting-and-combinatorics-page-2
+  - 03-discrete-distributions-page-1
+  - 03-discrete-distributions-page-2
+  - 04-continuous-distributions-page-1
+  - 04-continuous-distributions-page-2
+  - 05-descriptive-statistics-page-1
+  - 05-descriptive-statistics-page-2
+  - 06-bayesian-methods

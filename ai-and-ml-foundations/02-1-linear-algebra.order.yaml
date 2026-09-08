@@ -1,0 +1,9 @@
+series: Linear Algebra
+order:
+  - 01-vectors-and-visualisation
+  - 02-dot-product-and-projections
+  - 03-matrices-and-transformations
+  - 04-matrix-multiplication
+  - 05-gaussian-elimination
+  - 06-linear-algebra-fundamentals
+  - 07-matrix-applications

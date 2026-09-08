@@ -1,0 +1,5 @@
+series: Probability and Statistics / Enrichment
+order:
+  - binomial-coefficient-recursive-vs-memoised
+  - birthday-problem
+  - combinations-permutations-and-big-o

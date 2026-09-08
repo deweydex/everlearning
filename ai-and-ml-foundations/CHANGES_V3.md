@@ -1,0 +1,139 @@
+# Changes from V2 to V3: AI-and-ML-Foundations
+
+V3 is built from V2 by `_reorg/build_v3.py`. It is the language-and-environment pass described in the critique: outcome lists moved to the end, tables of contents removed, praise and reassurance removed, mastery and drill headings renamed, a looking-back cell with the learner's own question at the end of every core notebook, a question posed after examples that judge a person, a way of knowing after the learner cells of the notebooks written for this collection, the SQL introduction freed of its installation, an entry notebook per course, and Option D on the assessment brief. Nothing else was edited.
+
+- `AI-and-ML-Foundations/5-Neural-Networks/01_Forward_Pass_Colour_Classifier__page1of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/01_Forward_Pass_Colour_Classifier__page2of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/01_Forward_Pass_Colour_Classifier__page3of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/02_Neural_Networks_Complete_Introduction__page1of2.ipynb`: "Exercise" headings renamed "Your turn"
+- `AI-and-ML-Foundations/5-Neural-Networks/02_Neural_Networks_Complete_Introduction__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/02_Neural_Networks_Complete_Introduction__page2of2.ipynb`: praise lines removed (2)
+- `AI-and-ML-Foundations/5-Neural-Networks/02_Neural_Networks_Complete_Introduction__page2of2.ipynb`: reassurance removed
+- `AI-and-ML-Foundations/5-Neural-Networks/02_Neural_Networks_Complete_Introduction__page2of2.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/5-Neural-Networks/02_Neural_Networks_Complete_Introduction__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/03_Data_Pipeline_and_Function_Approximation__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/03_Data_Pipeline_and_Function_Approximation__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/04_Building_the_Network_Class__page1of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/04_Building_the_Network_Class__page2of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/04_Building_the_Network_Class__page3of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/05_Handwritten_Letters_EMNIST__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/05_Handwritten_Letters_EMNIST__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/06_Interactive_Lab_NIST.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/5-Neural-Networks/06_Interactive_Lab_NIST.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/5-Neural-Networks/New_07_From_Scratch_to_a_Library.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/01_NumPy.ipynb`: "Exercise" headings renamed "Your turn" (3)
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/01_NumPy.ipynb`: table of contents removed
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/01_NumPy.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/02_Matplotlib.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/02_Matplotlib.ipynb`: table of contents removed
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/02_Matplotlib.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/03_Lists_and_Matrices_Practice__page1of2.ipynb`: "Challenge" headings renamed "Try this" (9)
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/03_Lists_and_Matrices_Practice__page1of2.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/03_Lists_and_Matrices_Practice__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/03_Lists_and_Matrices_Practice__page2of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/03_Lists_and_Matrices_Practice__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/04_List_Comprehensions_Practice.ipynb`: "Mastering" removed from titles
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/04_List_Comprehensions_Practice.ipynb`: "Challenge" headings renamed "Try this" (18)
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/04_List_Comprehensions_Practice.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/0-Python-and-NumPy-Refresher/04_List_Comprehensions_Practice.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/01_Probability_Foundations__page1of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/01_Probability_Foundations__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/01_Probability_Foundations__page2of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/01_Probability_Foundations__page2of2.ipynb`: problem-posing question added to an example that judges a person (2)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/01_Probability_Foundations__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/02_Counting_and_Combinatorics__page1of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/02_Counting_and_Combinatorics__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/02_Counting_and_Combinatorics__page2of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/02_Counting_and_Combinatorics__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/03_Discrete_Distributions__page1of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/03_Discrete_Distributions__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/03_Discrete_Distributions__page2of2.ipynb`: "Challenge" headings renamed "Try this" (9)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/03_Discrete_Distributions__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/04_Continuous_Distributions__page1of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/04_Continuous_Distributions__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/04_Continuous_Distributions__page2of2.ipynb`: "Challenge" headings renamed "Try this" (9)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/04_Continuous_Distributions__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/05_Descriptive_Statistics__page1of2.ipynb`: "Challenge" headings renamed "Try this" (6)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/05_Descriptive_Statistics__page1of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/05_Descriptive_Statistics__page2of2.ipynb`: "Challenge" headings renamed "Try this" (8)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/05_Descriptive_Statistics__page2of2.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/06_Bayesian_Methods.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/06_Bayesian_Methods.ipynb`: "Challenge" headings renamed "Try this" (10)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/06_Bayesian_Methods.ipynb`: problem-posing question added to an example that judges a person (6)
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/06_Bayesian_Methods.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/Enrichment/Binomial_Coefficient_Recursive_vs_Memoised.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/Enrichment/Birthday_Problem.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/3-Probability-and-Statistics/Enrichment/Combinations_Permutations_and_Big_O.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page1of3.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page1of3.ipynb`: "Exercise" headings renamed "Your turn"
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page1of3.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page1of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page2of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page3of3.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_00_Python_Foundations__page3of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_01-02_Probability_and_Random_Walks.ipynb`: "Challenge" headings renamed "Try this" (5)
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_01-02_Probability_and_Random_Walks.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_03-04_Matrices.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_03-04_Matrices.ipynb`: "Challenge" headings renamed "Try this" (6)
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_03-04_Matrices.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_05-06_Markov_Chains.ipynb`: "Challenge" headings renamed "Try this" (6)
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_05-06_Markov_Chains.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_07-08_Text_Generation.ipynb`: "Challenge" headings renamed "Try this" (6)
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_07-08_Text_Generation.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_09-10_Final_Projects.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/From-0-to-Markov/Week_09-10_Final_Projects.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page1of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page2of3.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page2of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page3of3.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page3of3.ipynb`: "Exercise" headings renamed "Your turn" (3)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page3of3.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_1_Greyscale_Encoding__page3of3.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2a_Frequency_Analysis_and_Caesar_Ciphers.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2a_Frequency_Analysis_and_Caesar_Ciphers.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2a_Frequency_Analysis_and_Caesar_Ciphers.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2a_Frequency_Analysis_and_Caesar_Ciphers.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2b_N-Grams_and_Substitution_Ciphers.ipynb`: praise lines removed (2)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2b_N-Grams_and_Substitution_Ciphers.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2b_N-Grams_and_Substitution_Ciphers.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_2b_N-Grams_and_Substitution_Ciphers.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_3_RGB_Encoding.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_3_RGB_Encoding.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_3_RGB_Encoding.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_3_RGB_Encoding.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_4_Detecting_Hidden_Messages.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_4_Detecting_Hidden_Messages.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_4_Detecting_Hidden_Messages.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/6-Projects/Hidden-in-Plain-Sight/Part_4_Detecting_Hidden_Messages.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/2-Calculus/01_Derivatives_at_Sea.ipynb`: "Exercise" headings renamed "Your turn" (6)
+- `AI-and-ML-Foundations/2-Calculus/01_Derivatives_at_Sea.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/2-Calculus/01_Derivatives_at_Sea.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/2-Calculus/New_02_Integrals_at_Sea.ipynb`: "Exercise" headings renamed "Your turn" (6)
+- `AI-and-ML-Foundations/2-Calculus/New_02_Integrals_at_Sea.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/2-Calculus/New_02_Integrals_at_Sea.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/4-Learning-a-Line/01_Learning_a_Line.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page1of4.ipynb`: "Exercise" headings renamed "Your turn" (2)
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page1of4.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page2of4.ipynb`: "Exercise" headings renamed "Your turn" (3)
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page2of4.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page3of4.ipynb`: "Exercise" headings renamed "Your turn" (5)
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page3of4.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/4-Learning-a-Line/02_Backpropagation_Through_Data__page4of4.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/01_Vectors_and_Visualisation.ipynb`: reassurance removed
+- `AI-and-ML-Foundations/1-Linear-Algebra/01_Vectors_and_Visualisation.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/02_Dot_Product_and_Projections.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/03_Matrices_and_Transformations.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/04_Matrix_Multiplication.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/05_Gaussian_Elimination.ipynb`: "Exercise" headings renamed "Your turn" (6)
+- `AI-and-ML-Foundations/1-Linear-Algebra/05_Gaussian_Elimination.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/1-Linear-Algebra/05_Gaussian_Elimination.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/06_Linear_Algebra_Fundamentals.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/1-Linear-Algebra/06_Linear_Algebra_Fundamentals.ipynb`: "Challenge" headings renamed "Try this"
+- `AI-and-ML-Foundations/1-Linear-Algebra/06_Linear_Algebra_Fundamentals.ipynb`: outcomes moved to the end
+- `AI-and-ML-Foundations/1-Linear-Algebra/06_Linear_Algebra_Fundamentals.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/1-Linear-Algebra/07_Matrix_Applications.ipynb`: praise lines removed
+- `AI-and-ML-Foundations/1-Linear-Algebra/07_Matrix_Applications.ipynb`: "Exercise" headings renamed "Your turn" (4)
+- `AI-and-ML-Foundations/1-Linear-Algebra/07_Matrix_Applications.ipynb`: looking-back cell added
+- `AI-and-ML-Foundations/2-Calculus/New_02_Integrals_at_Sea.ipynb`: a way of knowing added after 5 learner cells: the expected result stated so the learner can tell they are right without a teacher
+- `AI-and-ML-Foundations/Assessments/New_Integrated_Assessment_Brief.ipynb`: Option D added: the learner's own question, answered with the tools of the course and marked with the same scheme
+- `AI-and-ML-Foundations/New_00_Your_Questions.ipynb`: new: an entry notebook that asks for the situations from the learner's own life the course might reach, and tells the teacher what to do with them

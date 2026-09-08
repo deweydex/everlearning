@@ -1,0 +1,16 @@
+series: Notebooks
+order:
+  - 01-introduction-to-sqlite
+  - 02-pandas-star-trek-tutorial
+  - 03-pandas-and-matplotlib
+  - 04-pandas-versus-sql
+  - 05-pandas-sql-cheat-sheet
+  - 06-from-pandas-to-sqlite-page-1
+  - 06-from-pandas-to-sqlite-page-2
+  - joins-sql-and-pandas-page-1
+  - joins-sql-and-pandas-page-2
+  - joins-sql-and-pandas-page-3
+  - importing-and-exporting-files-page-1
+  - importing-and-exporting-files-page-2
+  - 07-interactive-widgets
+  - 08-inserting-rows-and-building-forms
