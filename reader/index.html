@@ -9,7 +9,25 @@
 <label>Voice<select id="voice"><option value="bella">Bella</option><option value="jasper">Jasper</option><option value="luna">Luna</option><option value="bruno">Bruno</option><option value="rosie">Rosie</option><option value="hugo">Hugo</option><option value="kiki">Kiki</option><option value="leo">Leo</option></select></label>
 <label>Speaking speed <output id="speedLabel">1.00×</output><input id="speed" type="range" min=".7" max="1.4" step=".05" value="1"></label>
 </div><p><small>The first model load downloads weights from Hugging Face and runtime assets from a CDN. They may be cached by your browser. Changing model size requires loading a different model.</small></p></section>
-<section class="panel"><h2>2. Your text</h2><label for="text" style="font-weight:400">Text to read aloud</label>
+<section class="panel"><h2>2. Load an article (optional)</h2>
+<label for="articleUrl">Article link</label>
+<input id="articleUrl" type="url" placeholder="https://example.com/article" autocomplete="off" style="width:100%;padding:10px;margin-top:6px;font:inherit;border:1px solid #b9c7d7;border-radius:10px">
+<div class="actions"><button id="loadArticle">Load article</button></div>
+<p><small>We load directly from the article's website. Some sites block this browser access. No proxy or extraction service is used.</small></p>
+<details><summary>Import saved HTML or text instead</summary>
+<p>If the link cannot load, we can save the article as an HTML file in a desktop browser and open it here. On a phone, copying text from the browser's reader view is often easier. HTML and text files stay on this device.</p>
+<label for="articleFile">Saved article (.html, .htm, or .txt; up to 5 MB)</label>
+<input id="articleFile" type="file" accept=".html,.htm,.txt,text/html,text/plain" style="max-width:100%;margin:12px 0">
+</details>
+<p id="articleStatus" role="status" aria-live="polite">Paste a link, import a file, or use the text box below.</p>
+<div id="articlePreview" hidden>
+<h3 id="articleTitle"></h3><p id="articleSource" style="overflow-wrap:anywhere"></p>
+<label for="articleText">Extracted text — we can edit this before using it</label>
+<textarea id="articleText" style="height:220px"></textarea>
+<div class="actions"><button id="useArticle">Use this text in the reader</button></div>
+<p><small>This replaces the text below. Extraction may miss content or include extra text; let's review it before playing.</small></p>
+</div></section>
+<section class="panel"><h2>3. Your text</h2><label for="text" style="font-weight:400">Text to read aloud</label>
 <textarea id="text">We can explore an idea in several different ways. Sometimes listening makes it easier to notice what a sentence is really saying. Let's see how this voice sounds.</textarea>
 <div class="actions"><button id="play" class="primary">Generate &amp; play</button><button id="pause" disabled>Pause</button><button id="stop" disabled>Stop</button><button id="download" disabled>Download WAV</button></div>
 <audio id="audio" controls preload="none"></audio>
@@ -43,4 +61,7 @@ audio.addEventListener("play",refresh);audio.addEventListener("pause",refresh);a
 downloadBtn.addEventListener("click",()=>{if(!rendered)return;const url=URL.createObjectURL(rendered);const a=document.createElement("a");a.href=url;a.download="read-aloud.wav";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 window.addEventListener("beforeunload",()=>{engine?.dispose();if(blobUrl)URL.revokeObjectURL(blobUrl)});
 refresh();
-</script></body></html>
+</script>
+<script src="./vendor/Readability.js"></script>
+<script src="./article.js"></script>
+</body></html>
