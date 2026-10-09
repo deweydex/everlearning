@@ -34,6 +34,6 @@ Article loading stays in the existing static GitHub Pages site. There is no back
 - **Limits:** imports are capped at 5 MB and direct fetches time out after 20 seconds. PDF, login-protected, paywalled, and JavaScript-rendered content are not supported by this importer. Extraction is heuristic; review the preview for missing or extra content.
 - **Inactive HTML:** source HTML is parsed in an inert template, active elements/resource attributes are removed, and only plain text is displayed. Imported scripts and media are never added to the live page.
 
-The extractor is bundled at `vendor/Readability.js` from [Mozilla Readability 0.6.0](https://github.com/mozilla/readability/tree/0.6.0), unchanged (upstream Git blob `ad32a65c6b094139204ee8af9ae0d2c3a2d72da9`). Its license notice is preserved in the source and in `vendor/LICENSE.md`. It loads from the same static host as the reader.
+The extractor is bundled at `vendor/Readability.js` from [Mozilla Readability 0.6.0](https://github.com/mozilla/readability/tree/0.6.0), unchanged (upstream Git blob `ad32a65c6b094139204ee8af9ae0d2c3a2d72da9`). Its license notice is preserved in the source and in `vendor/LICENSE.txt`. It loads from the same static host as the reader.
 
 Loading an article URL still requires internet access to that website. Speech model/runtime downloads are unchanged; there is no new requirement for server-side processing, but this does not make the whole app guaranteed offline.
