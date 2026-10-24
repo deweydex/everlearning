@@ -25,7 +25,7 @@ Many notebooks in `sources` have a Markdown twin in `articles`. Both copies stay
 
 ## What does not live here
 
-This repository is public, so solutions, exams and assessment data do not belong in it. They are gathered in `_to-private/` while a private repository is set up, and that folder disappears once they have moved.
+This repository is public, so solutions, exams and assessment data do not belong in it. They live in a private repository called materials. Anything that needs marking or answers goes there first, and only the student-facing version comes here.
 
 ## Adding material
 

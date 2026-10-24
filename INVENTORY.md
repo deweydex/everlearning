@@ -69,4 +69,4 @@ Destinations use five words. **dewlab** means the material becomes an interactiv
 | Module descriptors: PDP 5N2927, MIT 5N18396, Database Methods 5N0783, Web Authoring 5N1910 | `reference/module-descriptors` | keep |
 | Read-aloud reader | `tools/reader` | keep? its own repository? |
 | Duplicates and old bundles | `archive` | delete once confirmed |
-| Solutions, exams, skills demos, exam database | `_to-private` | private repository |
+| Solutions, exams, skills demos, exam database | moved | private repository `materials` |
