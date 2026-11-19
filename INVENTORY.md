@@ -13,6 +13,7 @@ Destinations use five words. **dewlab** means the material becomes an interactiv
 | Object-oriented programming: maps, Hitchhiker's Guide, shapes | `programming/articles/oop-*` | 3 pages | | dewlab? |
 | Classy Polynomials, a worked OOP project | `programming/articles/polynomials-*` | 15 pages | `sources/classy-polynomials`, 7 notebooks | site, dewlab? |
 | Recursive algorithms enrichment | `programming/articles/enrichment-recursive-algorithms` | 1 page | | dewlab? |
+| Python first notebooks: names and values, input and print, making decisions, with the plan behind them | `programming/sources/python-first-notebooks` | 3 notebooks, plan in Markdown | | dewlab? |
 | Integrated programming and maths tutorials 1 to 17 | `programming/sources/integrated-programming-and-maths/tutorials` | 17 notebooks, solutions moved out | | dewlab (in progress) |
 | Learning outcome notebooks (PDP 5N2927, MIT 5N18396) | `programming/sources/integrated-programming-and-maths/learning-outcomes` | notebooks and notes | partly converted in dewlab | dewlab (in progress) |
 | Practice problem bank | `programming/sources/integrated-programming-and-maths/practice-problems` | Python file | used by dewlab | keep |
